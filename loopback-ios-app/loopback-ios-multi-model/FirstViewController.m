@@ -71,10 +71,10 @@
     };//end selfSuccessBlock
 
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"weapons"];
+    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"products"];
 
     // Invoke the allWithSuccess message for the 'weapons' LBModelPrototype
-    // Equivalent http JSON endpoint request : http://localhost:3000/weapons
+    // Equivalent http JSON endpoint request : http://localhost:3000/products
 
     [objectB allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
     return;
@@ -86,7 +86,7 @@
 - ( void ) createNewModel
 {
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"weapons"];
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"products"];
 
     //create new LBModel of type
     LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New weapon", @"effectiveRange" : @99 }];
@@ -139,10 +139,10 @@
     };
 
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"weapons"];
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"products"];
 
     //Get the instance of the model with ID = 2
-    // Equivalent http JSON endpoint request : http://localhost:3000/weapons/2
+    // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
@@ -177,10 +177,10 @@
     };
 
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"weapons"];
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"products"];
 
     //Get the instance of the model with ID = 2
-    // Equivalent http JSON endpoint request : http://localhost:3000/weapons/2
+    // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     

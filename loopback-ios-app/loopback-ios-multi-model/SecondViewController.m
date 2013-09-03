@@ -29,28 +29,27 @@
 
 
 //Define a Local Objective C representation of the our LoopBack mobile model type
-@interface Ammo : LBModel
+@interface Car : LBModel
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) NSNumber *caliber;
-@property (nonatomic, copy) NSString *caliberUnit;
+@property (nonatomic) NSNumber *milage;
 @end
 
-@implementation Ammo
+@implementation Car
 @end
 
-@interface AmmoPrototype : LBModelPrototype
+@interface CarPrototype : LBModelPrototype
 + (instancetype)prototype;
 @end
 
-@implementation AmmoPrototype
-+ (instancetype)prototype { return [self prototypeWithName:@"ammo"]; }
+@implementation CarPrototype
++ (instancetype)prototype { return [self prototypeWithName:@"cars"]; }
 @end
 
 
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) LBRESTAdapter *adapter;
-@property (weak, nonatomic) AmmoPrototype *prototypeObjectReference;
+@property (weak, nonatomic) CarPrototype *prototypeObjectReference;
 @property (strong, nonatomic) NSArray *tableData;
 @property (strong, nonatomic) NSMutableDictionary *guide;
 @end
@@ -65,10 +64,10 @@
     return _adapter;
 }
 
-- (AmmoPrototype *) prototypeObjectReference
+- (CarPrototype *) prototypeObjectReference
 {
     if (!_prototypeObjectReference)
-        _prototypeObjectReference = (AmmoPrototype *)[_adapter prototypeWithClass:[AmmoPrototype class]];
+        _prototypeObjectReference = (CarPrototype *)[_adapter prototypeWithClass:[CarPrototype class]];
     return _prototypeObjectReference;
 }
 
@@ -83,11 +82,11 @@
     void (^loadFailBlock)(NSError *) = ^(NSError *error) {
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
-
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"ammo"];
-
+    
+    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"car"];
+    
     // Invoke the allWithSuccess message for the 'ammo' LBModelPrototype
-    // Equivalent http JSON endpoint request : http://localhost:3000/ammo
+    // Equivalent http JSON endpoint request : http://localhost:3000/product
     [ self.prototypeObjectReference allWithSuccess:^(NSArray *models) {
         NSLog( @"Success %d", [models count]);
         
@@ -105,26 +104,27 @@
     void (^saveNewFailBlock)(NSError *) = ^(NSError *error) {
         [AppDelegate showGuideMessage: @"No Server Found"];
     };
-
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"weapons"];
-    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New weapon" }];
+    
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"product"];
+    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New product" }];
     NSLog( @"Created new model with property name %@ ,created ",  [NSString stringWithFormat:[model objectForKeyedSubscript:@"name"]] );
 
     //save the model back to the server
-
+    
     void (^saveNewSuccessBlock)() = ^() {
         NSLog( @"Sav Success !" );//model.count);
     };
     [model saveWithSuccess:saveNewSuccessBlock failure:saveNewFailBlock];
-
-    Ammo *modelInstance = (Ammo*)[self.prototypeObjectReference modelWithDictionary:@{ }];
-
+    
+    Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{ }];
+    
+    // MAS TODO ? Whats up with this ?
     NSLog( @"Created local Object %@", modelInstance.name );
-    modelInstance.name = @"MP5 Milspec";
-    modelInstance.caliber = @9;
-    modelInstance.caliberUnit = @"mm";
+    modelInstance.name = @"my New Product";
+    modelInstance.milage = @9;
+    //modelInstance.caliberUnit = @"mm";
     NSLog( @"Created local Object %@", [modelInstance toDictionary]);
-
+    
     //STAssertEqualObjects(model.bars, @1, @"Invalid bars.");
     //STAssertNil(model._id, nil, @"Invalid id");
     
@@ -190,8 +190,6 @@
         //cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", modelInstance.name, [ modelInstance.milage stringValue] ];
     }
     return cell;
-    
-    
     
     /*
      static NSString *simpleTableIdentifier = @"SimpleTableItem";
