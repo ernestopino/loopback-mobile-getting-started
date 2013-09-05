@@ -29,15 +29,14 @@ app.model(Tab1MobileModel);
 
 //Lets Create Some default data for our Tab1MobileModel
 
-var newProductA = {"name":"product A", inventory:7 };
-var newProductB = {"name":"product B", inventory:7 };
-var newProductC = {"name":"product C", inventory:7 };
+var newProductA = {"name":"product A", inventory:7 ,qty:2 };
+var newProductB = {"name":"product B", inventory:7 ,qty:33 };
+var newProductC = {"name":"product C", inventory:7 ,qty:33 };
 importer.task(Tab1MobileModel, 'create', newProductA);
 importer.task(Tab1MobileModel, 'create', newProductB);
 importer.task(Tab1MobileModel, 'create', newProductC);
+
 // ++++++++++++++++++++++++++++++++++++
-
-
 
 
 
