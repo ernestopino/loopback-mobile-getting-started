@@ -58,7 +58,7 @@ $ open loopback-ios-multi-model.xcodeproj
 
 6. Run the Application from Xcode ( CMD + R ) and follow the instructions on each tab of the application, uncommenting the code blocks in each ViewController illustrating how to Create Read Update and Delete using the iOS LoopBack.framework
 
-##### Getting Started with the iOS LoopBack SDK
+##### Getting Started with the iOS [LoopBack.framework](https://github.com/strongloop-community/loopback-ios-sdk)  SDK
 If you are creating a new iOS Application or want to integrate an existing App you can use the LoopBack.framework iOS SDK.
 
 1. Install and configure the StrongLoop Suite on your dev environment.  more information on installing LoopBack can be found in the [getting started ](http://alpha.strongloop.com/strongloop-suite/get-started/) section and the  [Quick Start Guide ](http://alpha.strongloop.com/strongloop-suite/quick-start-guide/)
@@ -98,23 +98,17 @@ Showing an empty ([ ]) array since no [model](#models) instances have been added
 
 If you installed the StrongLoop Suite on your local machine you can find the SDK under the StrongLoopSuite installation for OSX it is '/usr/local/share/strongloop-node/strongloop/sdks/loopback-ios-sdk'
 
-<img src="assets/XcodeDragToFrameworkFolder.png" width="50%" height="50%" alt="Smiley face">
-
     * Make sure the "Copy items to destination's group folder" checkbox is checked, so a local copy of the SDK is kept within your applications project folder.
 
-<img src="assets/ios-framework-add.png" width="220" alt="Smiley face">
 
 Verify the the LoopBack.framework is included in the 'Link with Binaries' section under the 'Build Phases' section. You can add it directly by clicking the '+' button and selecting the LoopBack.framework
 
-<img src="assets/linkBindaryScreen.png" width="80%" height="80%" alt="Smiley face">
 
 4. Import the LoopBack.h header into your application; in this case I am adding to 'FirstViewController.h'
 
 ```objectivec
 #import <LoopBack/LoopBack.h>
 ```
-
-<img src="assets/ios-firstViewController.png" width="60%" height="60%" alt="Smiley face">
 
 4. Use the LoopBack SDK to Create, Read, Update and Delete Mobile Models from your LoopBack Server. 
 
@@ -140,7 +134,7 @@ Verify the the LoopBack.framework is included in the 'Link with Binaries' sectio
 @implementation FirstViewController
 - ( void ) createModel
 {
-      	//Get a local representation of the 'products' model type
+          //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [self.adapter prototypeWithName:@"products"];
 		
     //create new LBModel of type
