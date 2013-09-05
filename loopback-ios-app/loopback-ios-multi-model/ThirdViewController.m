@@ -28,53 +28,79 @@
 - (IBAction)actionMethod1:(id)sender {
     
     // ++++++++++++++++++++++++++++++++++++
-    // Remove the Comment below to pull model instances from the server
+    // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
     // Define the load error functional block
     void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);
         [AppDelegate showGuideMessage: @"No Server Found"];
-        //[[[UIApplication sharedApplication] delegate] showGuideMessage:@"No Server Found"];
     };//end selfFailblock
     
     // Define the load success block for the LBModelPrototype allWithSuccess message
     void (^staticMethodSuccessBlock)() = ^(id result) {
-        NSLog(@"Got result: %@", result);
-
-        //NSLog( @"selfSuccessBlock %d", models.count);
-        //self.tableData  = models;
-        //[self.myTableView reloadData];
-        // [self showGuideMessage:@"Great! you just pulled code from node"];
-    };//end selfSuccessBlock
+        NSLog(@"Success on Static Method result: %@", result);
+    };//end staticMethodSuccessBlock
     
-    //Get a local representation of the 'products' model type
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"locations"];
-    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/locations/nearby" verb:@"GET"] forMethod:@"locations.nearby"];
-
-    // Invoke the allWithSuccess message for the 'products' LBModelPrototype
-    // Equivalent http JSON endpoint request : http://localhost:3000/products
+    //Get a local representation of the 'cars' model type
+    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"cars"];
+    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod1" verb:@"GET"] forMethod:@"cars.custommethod1"];
     
-    //http://localhost:3000/cars/custommethod?arg1=yack&arg2=123
-    //[objectB invokeStaticMethod:@"custommethod" parameters:@{@"arg1":@"yack" , @"arg2":@123} success:staticMethodSuccessBlock failure:staticMethodErrorBlock ];
-    [objectB invokeStaticMethod:@"nearby"
-                     parameters:@{
-                            @"here": @{
-                                @"lat": @(self.location.coordinate.latitude),
-                                @"lng": @(self.location.coordinate.longitude)
-                            }
-                        }
-                        success:staticMethodSuccessBlock
-                        failure:staticMethodErrorBlock];
+    // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
+    // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod1
+    [objectB invokeStaticMethod:@"custommethod1" parameters:@{} success:staticMethodSuccessBlock failure:staticMethodErrorBlock ];
     
-    //[objectB allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
-    //[objectB custommethod: @"yack" loadSuccessBlock failure: loadErrorBlock];
 }
 
 - (IBAction)actionMethod2:(id)sender {
+    // ++++++++++++++++++++++++++++++++++++
+    // Uncomment the comment block below to call a custom method on the server
+    // ++++++++++++++++++++++++++++++++++++
+    
+    // Define the load error functional block
+    void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };//end selfFailblock
+    
+    // Define the load success block for the LBModelPrototype allWithSuccess message
+    void (^staticMethodSuccessBlock)() = ^(id result) {
+        NSLog(@"Success on Static Method result: %@", result);
+    };//end staticMethodSuccessBlock
+    
+    //Get a local representation of the 'cars' model type
+    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"cars"];
+    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod2" verb:@"GET"] forMethod:@"cars.custommethod2"];
+    
+    // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
+    // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod2?arg1=yack&arg2=123
+    [objectB invokeStaticMethod:@"custommethod2" parameters:@{@"arg1":@"yack" , @"arg2":@123} success:staticMethodSuccessBlock failure:staticMethodErrorBlock ];
     
 }
 - (IBAction)actionMethod3:(id)sender {
+    
+    // ++++++++++++++++++++++++++++++++++++
+    // Uncomment the comment block below to call a custom method on the server
+    // ++++++++++++++++++++++++++++++++++++
+    
+    // Define the load error functional block
+    void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };//end selfFailblock
+    
+    // Define the load success block for the LBModelPrototype allWithSuccess message
+    void (^staticMethodSuccessBlock)() = ^(id result) {
+        NSLog(@"Success on Static Method result: %@", result);
+    };//end staticMethodSuccessBlock
+    
+    //Get a local representation of the 'cars' model type
+    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"cars"];
+    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod3" verb:@"GET"] forMethod:@"cars.custommethod3"];
+    
+    // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
+    // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod3?arg1=yack&arg2=123
+    [objectB invokeStaticMethod:@"custommethod3" parameters:@{@"arg1":@"yack" , @"arg2":@123} success:staticMethodSuccessBlock failure:staticMethodErrorBlock ];
     
 }
 

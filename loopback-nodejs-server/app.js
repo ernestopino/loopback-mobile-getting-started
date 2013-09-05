@@ -83,10 +83,47 @@ var Tab2MobileModel;
 // This code is used for Tab Three, of the Mobile App
 // Uncomment the code below to provide data to Tab 3
 
-//Define a method on the Mobile Model
-Tab2MobileModel.custommethod = function( arg1, arg2,fn )
+// CUSTOM METHOD 1
+//  Expose a remote method, http://localhost:3000/cars/custommethod1
+Tab2MobileModel.custommethod1 = function(fn )
 {
-	console.log("custommethod :" + arg1 + ","+  arg2);
+	console.log("custommethod1 called");
+	Tab2MobileModel.find({},fn);
+};//end CarMobileModel.custommethod1
+
+//  add the method to loopback as a remotable 'remote method call' under teh CarMobileModel
+loopback.remoteMethod(
+	Tab2MobileModel.custommethod1,
+  	{
+    	accepts: [ ],
+    	returns: {arg: 'metric', root: true}
+  	}
+);//end added a remoteMethod 'myCustomRemoteMethod1'
+
+// CUSTOM METHOD 2 
+Tab2MobileModel.custommethod2 = function( arg1, arg2,fn )
+{
+	console.log("custommethod2 :" + arg1 + ","+  arg2);
+	Tab2MobileModel.find({},fn);
+};//end CarMobileModel.custommethod
+
+//  Expose a remote method, http://localhost:3000/cars/custommethod2?arg1=yack&arg2=123
+//  add the mehtod to loopback as a remotable 'remote method call' under teh CarMobileModel
+loopback.remoteMethod(
+	Tab2MobileModel.custommethod2,
+  	{
+    	accepts: [
+      		{arg: 'arg1', type: 'String', required: true},
+      		{arg: 'arg2', type: 'Number', description: 'some cool number'}
+    	],
+    	returns: {arg: 'metric', root: true}
+  	}
+);//end added a remoteMethod 'myCustomRemoteMethod2'
+
+// CUSTOM METHOD 3
+Tab2MobileModel.custommethod3 = function( arg1, arg2,fn )
+{
+	console.log("custommethod3 :" + arg1 + ","+  arg2);
 	
 	//use the existing CarMobileModel.find
 	Tab2MobileModel.find({},fn);
@@ -97,13 +134,9 @@ Tab2MobileModel.custommethod = function( arg1, arg2,fn )
 	//{
 	//  totalFleetMilage += 100;
 	//}
-	
 };//end CarMobileModel.custommethod
-
-//  Expose a remote method, http://localhost:3000/cars/custommethod?arg1=yack&arg2=123
-//  add the mehtod to loopback as a remotable 'remote method call' under teh CarMobileModel
 loopback.remoteMethod(
-	Tab2MobileModel.custommethod,
+	Tab2MobileModel.custommethod3,
   	{
     	accepts: [
       		{arg: 'arg1', type: 'String', required: true},
@@ -111,7 +144,12 @@ loopback.remoteMethod(
     	],
     	returns: {arg: 'metric', root: true}
   	}
-);//end added a remoteMethod 'myCustomRemoteMethod'
+);//end added a remoteMethod 'myCustomRemoteMethod3'
+
+
+
+
+
 
 
 

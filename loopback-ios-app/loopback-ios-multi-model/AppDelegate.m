@@ -99,9 +99,7 @@
     [_guide setObject:@"Looking Good! Go to Tab2 'Second' and lets create a custom Model" forKey:@"Finished Tab1"];
     
     
-    [_guide setObject:@"Does'nt look like your server is running. From the node-server folder start the server with \n'slnode run app.js'\n and try again " forKey:@"No Server Found"];
-    
-    
+    [_guide setObject:@"Does'nt look like your server is running. From the node-server folder start the server with \n'slc run app.js'\n and try again " forKey:@"No Server Found"];
     
     
     NSLog(@"Message: %@", [   _guide objectForKey:message]);
