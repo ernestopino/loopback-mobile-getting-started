@@ -26,11 +26,7 @@
 
 
 - (IBAction)actionMethod1:(id)sender {
-    
-    // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
-    // ++++++++++++++++++++++++++++++++++++
-    
+        
     // Define the load error functional block
     void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);
@@ -53,10 +49,7 @@
 }
 
 - (IBAction)actionMethod2:(id)sender {
-    // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
-    // ++++++++++++++++++++++++++++++++++++
-    
+
     // Define the load error functional block
     void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);
