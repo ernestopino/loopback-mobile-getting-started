@@ -134,7 +134,8 @@ Tab2MobileModel.custommethod3 = function( arg1, arg2,fn )
 	//{
 	//  totalFleetMilage += 100;
 	//}
-};//end CarMobileModel.custommethod
+};//end CarMobileModel.custommethod3
+
 loopback.remoteMethod(
 	Tab2MobileModel.custommethod3,
   	{
