@@ -6,17 +6,23 @@
 ## Getting Started 
 1. Install and configure the StrongLoop Suite on your dev environment.  more information on installing LoopBack can be found in the [ StrongLoop Products ](http://strongloop.com/products
 
-2. Start the LoopBack Node Server 
+2. Download or clone this repo to your local machine from github [loopback-mobile-getting-started ](https://github.com/strongloop-community/loopback-mobile-getting-started) to a folder on iOS development machine
+
+```sh
+$ git clone https://github.com/strongloop-community/loopback-mobile-getting-started
+```
+
+3. Start the LoopBack Node Server 
 ```sh
 $cd loopback-nodejs-server
 $slnode run app.js
 ```
 
-3. Open the iOS Guide application, the Xcode Project is located at loopback-ios-multi-model/loopback-ios-multi-model.xcodeproj
+4. Open the iOS Guide application, the Xcode Project is located at loopback-ios-multi-model/loopback-ios-multi-model.xcodeproj
 
-4. Run the Guide Application iOS Application CMD-R
+5. Run the Guide Application iOS Application CMD-R
 
-5. Follow the instructions provided by the App , start by pressing the "Start with the next Tab" button
+6. Follow the instructions provided by the App , start by pressing the "Start with the next Tab" button
 
 
 ### Native iOS Development with LoopBack
@@ -42,24 +48,6 @@ The easiest way to get started is to start with the LoopBack iOS 'Guide Applicat
 <img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/03.png?login=mschmulen&token=4daf4ddb6a696d003f5c08a21c74b087" alt="tab 2" height="209" width="120">
 <img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/05.png?login=mschmulen&token=92afc0282056289fa6530eef46af7167" alt="tab 3" height="209" width="120">
 
-1. Install and configure the StrongLoop Suite on your dev environment.  more information on installing LoopBack can be found in the [getting started ](http://alpha.strongloop.com/strongloop-suite/get-started/) section and the  [Quick Start Guide ](http://alpha.strongloop.com/strongloop-suite/quick-start-guide/)
-
-2. Create the StrongLoop Suite, LoopBack Example App.
-```sh
-$ slc example
-```
-
-3. Run the ls-sample-app example server app 
-```sh
-$ cd sls-sample-app
-$ slc run .
-```
-
-4. Download the LoopBack Guide Application to your local machine from github [here](https://github.com/strongloop/loopback-ios-getting-started)
-
-```sh
-$ git clone git@github.com:strongloop/loopback-ios-getting-started.git
-```
 
 5. Open the Xcode Project and CMD + R Run your application
 
