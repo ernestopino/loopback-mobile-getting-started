@@ -10,7 +10,7 @@
 /*
  Tab 1, Step 1
  
- This Tab shows you how to Create Update and Delete Model types and persist to the LoopBack server,
+ This Tab shows you how to Create Read Update and Delete Model (CRUD) types and persist to the LoopBack server,
  
  You need to uncomment the code sections in the methods below to enable the Create Update & Delete Operations
  - ( void ) getModels
@@ -72,7 +72,7 @@
 
     //Get a local representation of the 'weapons' model type
     LBModelPrototype *objectB = [self.adapter prototypeWithName:@"products"];
-
+    
     // Invoke the allWithSuccess message for the 'weapons' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/products
 
@@ -89,7 +89,7 @@
     LBModelPrototype *prototype = [self.adapter prototypeWithName:@"products"];
 
     //create new LBModel of type
-    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New weapon", @"effectiveRange" : @99 }];
+    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New Product", @"inventory" : @99 }];
 
     // Define the load error functional block
     void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
@@ -123,8 +123,8 @@
     // Define your success functional block
     void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
         //dynamically add an 'inventory' variable to this model type before saving it to the server
-        model[@"effectiveRange"] = @"22";
-
+        model[@"inventory"] = @"66";
+        
         //Define the save error block
         void (^saveErrorBlock)(NSError *) = ^(NSError *error) {
             NSLog( @"Error on Save %@", error.description);
@@ -223,9 +223,9 @@
     {
         LBModel *model = (LBModel *)[self.tableData objectAtIndex:indexPath.row];
         //cell.textLabel.text = model[@"name"]; // [model objectForKeyedSubscript:@"name"];
-        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@m",
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@",
                                [model objectForKeyedSubscript:@"name"] ,
-                               (int)[model objectForKeyedSubscript:@"effectiveRange"] ];
+                               (int)[model objectForKeyedSubscript:@"inventory"] ];
     }
     return cell;
 }

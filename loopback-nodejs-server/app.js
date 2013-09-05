@@ -29,9 +29,9 @@ app.model(Tab1MobileModel);
 
 //Lets Create Some default data for our Tab1MobileModel
 
-var newProductA = {"name":"product A", inventory:12 };
-var newProductB = {"name":"product B", inventory:33 };
-var newProductC = {"name":"product C", inventory:66 };
+var newProductA = {"name":"product A", inventory:7 };
+var newProductB = {"name":"product B", inventory:7 };
+var newProductC = {"name":"product C", inventory:7 };
 importer.task(Tab1MobileModel, 'create', newProductA);
 importer.task(Tab1MobileModel, 'create', newProductB);
 importer.task(Tab1MobileModel, 'create', newProductC);
@@ -69,9 +69,9 @@ var Tab2MobileModel;
 	app.model(Tab2MobileModel);
 	
 	//Lets Create Some default data for our CarMobileModel
-	var newCarA = {"name":"Mustang", milage:22, id:1 };
-	var newCarB = {"name":"VW", milage:33, id:2 };
-	var newCarC = {"name":"FJ", milage:44, id:3 };
+	var newCarA = {"name":"Mustang", milage:22 };
+	var newCarB = {"name":"VW", milage:33 };
+	var newCarC = {"name":"FJ", milage:44 };
 	importer.task(Tab2MobileModel, 'create', newCarA);
 	importer.task(Tab2MobileModel, 'create', newCarB);
 	importer.task(Tab2MobileModel, 'create', newCarC);

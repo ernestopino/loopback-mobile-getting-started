@@ -86,13 +86,16 @@
     LBModelPrototype *objectB = [self.adapter prototypeWithName:@"car"];
     
     // Invoke the allWithSuccess message for the 'ammo' LBModelPrototype
-    // Equivalent http JSON endpoint request : http://localhost:3000/product
+    // Equivalent http JSON endpoint request : http://localhost:3000/car
     [ self.prototypeObjectReference allWithSuccess:^(NSArray *models) {
         NSLog( @"Success %d", [models count]);
         
         self.tableData = models;
         [self.myTableView reloadData];
     } failure:loadFailBlock];
+    return;
+    
+    [AppDelegate showGuideMessage: @"Step2 uncomment getModels"];
     
 };//end getModels
 
@@ -105,24 +108,76 @@
         [AppDelegate showGuideMessage: @"No Server Found"];
     };
     
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"product"];
-    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New product" }];
-    NSLog( @"Created new model with property name %@ ,created ",  [NSString stringWithFormat:[model objectForKeyedSubscript:@"name"]] );
-
-    //save the model back to the server
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"car"];
     
-    void (^saveNewSuccessBlock)() = ^() {
-        NSLog( @"Sav Success !" );//model.count);
+    Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{}];
+    modelInstance.name = @"Telsa Model S";
+    modelInstance.milage = @9;
+    NSLog( @"Created local Object %@", [modelInstance toDictionary]);
+    
+    [modelInstance saveWithSuccess:^{
+        NSLog( @"Save Success %@", modelInstance.name );
+        //lastId = model._id;
+        
+        // call a 'local' refresh to update the tableView
+        [self getModels];
+    } failure:saveNewFailBlock];
+    //[ modelInstance invokeMethod:@"custommethod" parameters:<#(NSDictionary *)#> success:<#^(id value)success#> failure:<#^(NSError *error)failure#>]
+    return;
+    
+    [AppDelegate showGuideMessage: @"Step2 uncomment createNewModel"];
+}//end createNewModuleAndPushToServer
+
+- ( void ) updateExistingModel
+{
+   
+    // Define the find error functional block
+    void (^findErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error No model found with ID %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
     };
-    [model saveWithSuccess:saveNewSuccessBlock failure:saveNewFailBlock];
+    
+    // Define your success functional block
+    void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
+        //dynamically add an 'inventory' variable to this model type before saving it to the server
+        model[@"inventory"] = @"66";
+        
+        //Define the save error block
+        void (^saveErrorBlock)(NSError *) = ^(NSError *error) {
+            NSLog( @"Error on Save %@", error.description);
+        };
+        void (^saveSuccessBlock)() = ^() {
+            [AppDelegate showGuideMessage: @"Tab 'One' UpdateSuccess"];
+            
+            // call a 'local' refresh to update the tableView
+            [self getModels];
+        };
+        [model saveWithSuccess:saveSuccessBlock failure:saveErrorBlock];
+    };
+    
+    //Get a local representation of the 'weapons' model type
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"products"];
+    
+    //Get the instance of the model with ID = 2
+    // Equivalent http JSON endpoint request : http://localhost:3000/products/2
+    [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
+    return;
+    
+    [AppDelegate showGuideMessage: @"Step2 uncomment updateExistingModel"];
+    
+    /*
+    NSLog( @"Update an Existing Model and push to the server");
+    
+    void (^saveNewFailBlock)(NSError *) = ^(NSError *error) {
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };
+    
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"car"];
     
     Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{ }];
-    
-    // MAS TODO ? Whats up with this ?
     NSLog( @"Created local Object %@", modelInstance.name );
-    modelInstance.name = @"my New Product";
+    modelInstance.name = @"Telsa Model S";
     modelInstance.milage = @9;
-    //modelInstance.caliberUnit = @"mm";
     NSLog( @"Created local Object %@", [modelInstance toDictionary]);
     
     //STAssertEqualObjects(model.bars, @1, @"Invalid bars.");
@@ -137,19 +192,44 @@
         [self getModels];
         
     } failure:saveNewFailBlock];
-    
-    //[ modelInstance invokeMethod:@"custommethod" parameters:<#(NSDictionary *)#> success:<#^(id value)success#> failure:<#^(NSError *error)failure#>]
-    
-}//end createNewModuleAndPushToServer
-
-- ( void ) updateExistingModel
-{
-    // MAS TODO
+    */
 }//end updateExistingModelAndPushToServer
 
 - ( void ) deleteExistingModel
 {
-    // MAS TODO
+    // Define the find error functional block
+    void (^findErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error No model found with ID %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };
+    
+    // Define your success functional block
+    void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
+        
+        //Define the save error block
+        void (^removeErrorBlock)(NSError *) = ^(NSError *error) {
+            NSLog( @"Error on Save %@", error.description);
+        };
+        void (^removeSuccessBlock)() = ^() {
+            [AppDelegate showGuideMessage: @"Tab 'One' DeleteSuccess"];
+            
+            // call a 'local' refresh to update the tableView
+            [self getModels];
+        };
+        
+        //Destroy this model instance on the LoopBack node server
+        [ model destroyWithSuccess:removeSuccessBlock failure:removeErrorBlock ];
+    };
+    
+    //Get a local representation of the 'weapons' model type
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"cars"];
+    
+    //Get the instance of the model with ID = 2
+    // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
+    [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
+    return;
+    
+    [AppDelegate showGuideMessage: @"Step2 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 
 - (IBAction)actionRefresh:(id)sender {
@@ -163,7 +243,9 @@
 - (IBAction)actionUpdate:(id)sender {
     [self updateExistingModel];
 }
+
 - (IBAction)actionDelete:(id)sender {
+    [self deleteExistingModel];
 }
 
 // UITableView methods
@@ -186,32 +268,15 @@
     if ( [[ [self.tableData objectAtIndex:indexPath.row] class] isSubclassOfClass:[LBModel class]])
     {
         LBModel *model = (LBModel *)[self.tableData objectAtIndex:indexPath.row];
-        cell.textLabel.text = model[@"name"]; //[model objectForKeyedSubscript:@"name"];
+        //cell.textLabel.text = model[@"name"]; //[model objectForKeyedSubscript:@"name"];
         //cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", modelInstance.name, [ modelInstance.milage stringValue] ];
+        
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@",
+                               [model objectForKeyedSubscript:@"name"] ,
+                               (int)[model objectForKeyedSubscript:@"milage"] ];
+        
     }
     return cell;
-    
-    /*
-     static NSString *simpleTableIdentifier = @"SimpleTableItem";
-     
-     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-     
-     if (cell == nil) {
-     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-     }
-     
-     //cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
-     if ( [[ [self.tableData objectAtIndex:indexPath.row] class] isSubclassOfClass:[LBModel class]])
-     {
-     LBModel *model = (LBModel *)[self.tableData objectAtIndex:indexPath.row];
-     //NSLog( [NSString stringWithFormat:[model objectAtKeyedSubscript:@"name"]] );
-     //cell.textLabel.text = [NSString stringWithFormat:[model objectForKeyedSubscript:@"name"]];
-     cell.textLabel.text = model[@"city"];
-     cell.textLabel.text = [model objectForKeyedSubscript:@"city"];
-     
-     }
-     return cell;
-     */
 }
 
 

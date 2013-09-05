@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="icon_57x57.png" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-3F-xQ7"/>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Getting your CrUD together&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvp-7k-TlI">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Getting your CRUD together&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvp-7k-TlI">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="7s8-9i-CYn"/>
                                 </constraints>
@@ -427,7 +427,7 @@
                                 <color key="textColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Getting your CrUD together&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ex-yV-VQM">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Getting your CRUD together&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ex-yV-VQM">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="241" id="hAY-UB-elC"/>
                                 </constraints>

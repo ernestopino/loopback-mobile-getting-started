@@ -69,12 +69,23 @@
     [_guide setObject:@"Congradulations you deleted a model instance on the server, press 'Referesh' to update the local Table View " forKey:@"Tab 'One' DeleteSuccess"];
     
     
-    
     //Tab2
     [_guide setObject:@"For this step uncomment the first comment block in app.js to publish a new set of models" forKey:@"Tab 'Two' Step2"];
     
+    //Step 2 : uncomment reminders
+    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) getModels' in 'SecondViewController.m' ?" forKey:@"Step2 uncomment getModels"];
+    [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) createNewModel' in 'SecondViewController.m' " forKey:@"Step2 uncomment createNewModel"];
+    [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) updateExistingModel' in 'SecondViewController.m' " forKey:@"Step2 uncomment updateExistingModel"];
+    [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) deleteExistingModel' in 'SecondViewController.m' " forKey:@"Step2 uncomment deleteExistingModel"];
+    
+    
     //Tab3
     [_guide setObject:@"For this step uncomment the second comment block in app.js to publish a new set of models" forKey:@"Tab 'Three' Step3"];
+    
+    //Step 3 : uncomment reminders
+    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod1' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod1"];
+    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod2' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod2"];
+    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod3' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod3"];
     
     //Tab4
     [_guide setObject:@"For this step uncomment the third comment block code in app.js to publish a new set of models" forKey:@"Tab 'Four' Step4"];
