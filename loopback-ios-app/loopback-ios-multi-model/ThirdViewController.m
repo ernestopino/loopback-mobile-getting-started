@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 
 @interface ThirdViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *labelMethod1;
+@property (weak, nonatomic) IBOutlet UILabel *labelMethod2;
 @property (weak, nonatomic) LBRESTAdapter *adapter;
 @property (nonatomic) CLLocation *location;
 @end
@@ -36,6 +38,9 @@
     // Define the load success block for the LBModelPrototype allWithSuccess message
     void (^staticMethodSuccessBlock)() = ^(id result) {
         NSLog(@"Success on Static Method result: %@", result);
+        
+        self.labelMethod1.text = @"Response 1";
+        
     };//end staticMethodSuccessBlock
     
     //Get a local representation of the 'cars' model type
@@ -45,7 +50,6 @@
     // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod1
     [objectB invokeStaticMethod:@"custommethod1" parameters:@{} success:staticMethodSuccessBlock failure:staticMethodErrorBlock ];
-    
 }
 
 - (IBAction)actionMethod2:(id)sender {
@@ -59,6 +63,9 @@
     // Define the load success block for the LBModelPrototype allWithSuccess message
     void (^staticMethodSuccessBlock)() = ^(id result) {
         NSLog(@"Success on Static Method result: %@", result);
+        
+        self.labelMethod2.text = @"Response 2";
+
     };//end staticMethodSuccessBlock
     
     //Get a local representation of the 'cars' model type
@@ -124,7 +131,7 @@
     manager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
     manager.delegate = self;
     [manager startUpdatingLocation];
-
+    
     // In the event the location services are disabled, start with a default location:
     self.location = [[CLLocation alloc] initWithLatitude:37.587409 longitude:-122.338225];
 }

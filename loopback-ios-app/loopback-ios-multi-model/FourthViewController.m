@@ -10,6 +10,8 @@
 #import "AppDelegate.h"
 
 @interface FourthViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *labelMethod1;
+@property (weak, nonatomic) IBOutlet UILabel *labelMethod2;
 
 @end
 
