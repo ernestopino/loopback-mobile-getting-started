@@ -28,13 +28,9 @@ Tab1MobileModel.attachTo(DataStoreOne);
 app.model(Tab1MobileModel);
 
 //Lets Create Some default data for our Tab1MobileModel
-
-var newProductA = {"name":"product A", inventory:7 ,qty:2 };
-var newProductB = {"name":"product B", inventory:7 ,qty:33 };
-var newProductC = {"name":"product C", inventory:7 ,qty:33 };
-importer.task(Tab1MobileModel, 'create', newProductA);
-importer.task(Tab1MobileModel, 'create', newProductB);
-importer.task(Tab1MobileModel, 'create', newProductC);
+Tab1MobileModel.create({"name":"product A", inventory:7 ,qty:2});
+Tab1MobileModel.create({"name":"product B", inventory:7 ,qty:33});
+Tab1MobileModel.create({"name":"product C", inventory:7 ,qty:33});
 
 // ++++++++++++++++++++++++++++++++++++
 
@@ -187,6 +183,72 @@ loopback.remoteMethod(
   	}
 );//end added a remoteMethod 'myCustomRemoteMethod'
 */
+
+
+
+
+// ++++++++++++++++++++++++++++++++++++
+ // Store with Location and Geo Search
+// ++++++++++++++++++++++++++++++++++++
+// This code is used for Tab One, of the Mobile App
+
+// Define your Product 'Model' Type
+//var StoreModel = lbloopback.createModel('store' );
+//Attach your new ModelObject to the Memory DataStore
+//StoreModel.attachTo(DataStoreOne);
+//Add the ProductWidget 'Model' to the LoopBack 'Mobile API' App
+
+
+//http://localhost:3000/stores?filter[where][geo][near]=4,10
+//http://localhost:3000/stores/findOne?filter[where][geo][near]=4,10
+//http://localhost:3000/stores?filter[where][geo][near]=4,10&filter[limit]=2
+
+var StoreModel = loopback.memory().createModel('store' );
+app.model(StoreModel);
+
+//Lets Create Some default data for our StoreModel
+StoreModel.create({
+	name:"Store 1",
+	geo: { lat: 4, lng: 20 }
+});
+
+StoreModel.create({
+	name:"Store 2",
+	geo: { lat: 5, lng: 20 }
+});
+
+StoreModel.create({
+	name:"Store 3",
+	geo: { lat: 6, lng: 20 }
+});
+
+
+StoreModel.custommethod1 = function(fn )
+{
+	console.log("StoreModel.custommethod1 called");
+	StoreModel.find({},fn); //Where, Order, Limit, Fields
+};//end StoreModel.custommethod1
+
+//  add the method to loopback as a remotable 'remote method call' under teh CarMobileModel
+loopback.remoteMethod(
+	StoreModel.custommethod1,
+  	{
+    	accepts: [ ],
+    	returns: {arg: 'metric', root: true}
+  	}
+);//end added a remoteMethod 'myCustomRemoteMethod1'
+
+// http://localhost:3000/stores/custommethod1?arg1=yack&arg2=123
+StoreModel.afterRemote('custommethod1', function( ctx, model, next) {
+	ctx.res.send(" YACK YACK YACK ");
+});
+
+
+// ++++++++++++++++++++++++++++++++++++
+
+
+
+
 
 //add the REST API for our loopback 'Mobile Models'
 app.use(loopback.rest());
