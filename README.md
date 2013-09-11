@@ -1,5 +1,4 @@
 
-
 #LoopBack Mobile Getting Started
 
 
@@ -23,7 +22,6 @@ $slnode run app.js
 5. Run the Guide Application iOS Application CMD-R
 
 6. Follow the instructions provided by the App , start by pressing the "Start with the next Tab" button
-
 
 ### Native iOS Development with LoopBack
 
@@ -153,7 +151,7 @@ Verify the the LoopBack.framework is included in the 'Link with Binaries' sectio
 	@end
 ```
 
-Running this method will result in new product model instance with a name 'My New Product'
+Running this method will result in new product model instance with a name 'My New Product'.
 
 You can Verify the Success of the operation by opening your browser to [localhost:300/products](http://localhost:3000/products)
 
