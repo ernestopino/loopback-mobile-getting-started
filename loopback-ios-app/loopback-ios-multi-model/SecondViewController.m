@@ -155,7 +155,7 @@
     // Define your success functional block
     void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
         //dynamically add an 'inventory' variable to this model type before saving it to the server
-        model[@"inventory"] = @"66";
+        model[@"milage"] = @"7777";
         
         //Define the save error block
         void (^saveErrorBlock)(NSError *) = ^(NSError *error) {
@@ -303,6 +303,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initializeServerWithData];
     [AppDelegate showGuideMessage: @"Tab 'Two' Step2"];
 }
 
@@ -310,6 +311,25 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) initializeServerWithData
+{
+    // Define the load error functional block
+    void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error on Save %@", error.description);
+    };
+    
+    // Define the load success block for saveNewSuccessBlock message
+    void (^saveNewSuccessBlock)() = ^() {
+    };
+    
+    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"cars"];
+    //Persist the newly created Model to the LoopBack node server
+    [ [prototype modelWithDictionary:@{ @"name": @"Toyota FJ", @"milage" : @200 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+    [ [prototype modelWithDictionary:@{ @"name": @"VW Bug", @"milage" : @300 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+    [ [prototype modelWithDictionary:@{ @"name": @"Hoda Accord", @"milage" : @400 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+    
 }
 
 
