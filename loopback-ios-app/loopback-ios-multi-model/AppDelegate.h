@@ -14,5 +14,6 @@
 @property (strong, nonatomic) UIWindow *window;
 +(void)showGuideMessage : ( NSString *) message;
 + (LBRESTAdapter *) adapter;
++ (void) initializeServerWithData;
 @end
 

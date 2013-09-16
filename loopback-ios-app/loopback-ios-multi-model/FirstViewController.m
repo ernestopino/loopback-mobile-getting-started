@@ -85,7 +85,7 @@
     
     ///*
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *prototype = [  [AppDelegate adapter]  prototypeWithName:@"products"];
+    LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
 
     //create new LBModel of type
     LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New Product", @"inventory" : @99 }];
