@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <LoopBack/LoopBack.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 +(void)showGuideMessage : ( NSString *) message;
++ (LBRESTAdapter *) adapter;
 @end
 

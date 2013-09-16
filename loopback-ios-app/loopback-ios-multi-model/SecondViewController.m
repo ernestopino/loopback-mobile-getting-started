@@ -48,26 +48,17 @@
 
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
-@property (weak, nonatomic) LBRESTAdapter *adapter;
 @property (weak, nonatomic) CarPrototype *prototypeObjectReference;
 @property (strong, nonatomic) NSArray *tableData;
-@property (strong, nonatomic) NSMutableDictionary *guide;
 @end
 
 @implementation SecondViewController
 
 
-- (LBRESTAdapter *) adapter
-{
-    if( !_adapter)
-        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://localhost:3000"]];
-    return _adapter;
-}
-
 - (CarPrototype *) prototypeObjectReference
 {
     if (!_prototypeObjectReference)
-        _prototypeObjectReference = (CarPrototype *)[_adapter prototypeWithClass:[CarPrototype class]];
+        _prototypeObjectReference = (CarPrototype *)[ [AppDelegate adapter]  prototypeWithClass:[CarPrototype class]];
     return _prototypeObjectReference;
 }
 
@@ -88,7 +79,7 @@
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
     
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"car"];
+    LBModelPrototype *objectB = [ [AppDelegate adapter] prototypeWithName:@"car"];
     
     // Invoke the allWithSuccess message for the 'ammo' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/car
@@ -118,7 +109,7 @@
         [AppDelegate showGuideMessage: @"No Server Found"];
     };
     
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"car"];
+    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"car"];
     
     Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{}];
     modelInstance.name = @"Telsa Model S";
@@ -171,7 +162,7 @@
     };
     
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"cars"];
+    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
@@ -242,7 +233,7 @@
     };
     
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"cars"];
+    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
@@ -324,7 +315,7 @@
     void (^saveNewSuccessBlock)() = ^() {
     };
     
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"cars"];
+    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
     //Persist the newly created Model to the LoopBack node server
     [ [prototype modelWithDictionary:@{ @"name": @"Toyota FJ", @"milage" : @200 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     [ [prototype modelWithDictionary:@{ @"name": @"VW Bug", @"milage" : @300 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];

@@ -181,6 +181,7 @@
 				AE9D02C217A09FB500306CEC /* SecondViewController.m */,
 				AE9D02F017A0B90600306CEC /* ThirdViewController.m */,
 				AE9D02F317A0B91500306CEC /* FourthViewController.m */,
+				AE9D02AF17A09FB500306CEC /* AppDelegate.m */,
 				AE9D02A617A09FB500306CEC /* Supporting Files */,
 			);
 			path = "loopback-ios-multi-model";
@@ -196,7 +197,6 @@
 				AE9D02F217A0B91500306CEC /* FourthViewController.h */,
 				AEC5815317BBD81700DDA22C /* WelcomeViewController.h */,
 				AE9D02AE17A09FB500306CEC /* AppDelegate.h */,
-				AE9D02AF17A09FB500306CEC /* AppDelegate.m */,
 				AEC5815417BBD81700DDA22C /* WelcomeViewController.m */,
 				AEC5816B17BD3E3600DDA22C /* wip.png */,
 				AEC5816C17BD3E3600DDA22C /* wip@2x.png */,

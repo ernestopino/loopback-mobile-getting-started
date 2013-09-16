@@ -13,6 +13,14 @@
 
 @implementation AppDelegate
 
+static LBRESTAdapter * _adapter = nil;
+
++ (LBRESTAdapter *) adapter
+{
+    if( !_adapter)
+        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://localhost:3000"]];
+    return _adapter;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -46,6 +54,7 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 
 + (void) showGuideMessage : ( NSString *) message

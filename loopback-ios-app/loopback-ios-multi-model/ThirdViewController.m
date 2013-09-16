@@ -12,20 +12,10 @@
 @interface ThirdViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelMethod1;
 @property (weak, nonatomic) IBOutlet UILabel *labelMethod2;
-@property (weak, nonatomic) LBRESTAdapter *adapter;
 @property (nonatomic) CLLocation *location;
 @end
 
 @implementation ThirdViewController
-
-
-- (LBRESTAdapter *) adapter
-{
-    if( !_adapter)
-        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://localhost:3000"]];
-    return _adapter;
-}
-
 
 - (IBAction)actionMethod1:(id)sender {
         
@@ -44,8 +34,8 @@
     };//end staticMethodSuccessBlock
     
     //Get a local representation of the 'cars' model type
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"cars"];
-    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod1" verb:@"GET"] forMethod:@"cars.custommethod1"];
+    LBModelPrototype *objectB = [ [AppDelegate adapter] prototypeWithName:@"cars"];
+    [[ [AppDelegate adapter]  contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod1" verb:@"GET"] forMethod:@"cars.custommethod1"];
     
     // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod1
@@ -69,8 +59,8 @@
     };//end staticMethodSuccessBlock
     
     //Get a local representation of the 'cars' model type
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"cars"];
-    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod2" verb:@"GET"] forMethod:@"cars.custommethod2"];
+    LBModelPrototype *objectB = [ [AppDelegate adapter] prototypeWithName:@"cars"];
+    [[ [AppDelegate adapter]  contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod2" verb:@"GET"] forMethod:@"cars.custommethod2"];
     
     // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod2?arg1=yack&arg2=123
@@ -95,8 +85,8 @@
     };//end staticMethodSuccessBlock
     
     //Get a local representation of the 'cars' model type
-    LBModelPrototype *objectB = [self.adapter prototypeWithName:@"cars"];
-    [[self.adapter contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod3" verb:@"GET"] forMethod:@"cars.custommethod3"];
+    LBModelPrototype *objectB = [ [AppDelegate adapter] prototypeWithName:@"cars"];
+    [[ [AppDelegate adapter]  contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod3" verb:@"GET"] forMethod:@"cars.custommethod3"];
     
     // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod3?arg1=yack&arg2=123
