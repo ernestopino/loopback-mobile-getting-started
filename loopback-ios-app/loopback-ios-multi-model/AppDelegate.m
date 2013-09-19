@@ -45,9 +45,9 @@ static LBRESTAdapter * _adapter = nil;
             void (^saveNewSuccessBlock)() = ^() { };
             
             //Persist the newly created Model to the LoopBack node server
-            [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product A", @"inventory" : @11 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-            [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product B", @"inventory" : @22 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-            [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product C", @"inventory" : @33 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+            [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product A", @"inventory" : @11, @"price" :@66.34 , @"units-sold" : @11 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+            [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product B", @"inventory" : @22, @"price" :@22.34 , @"units-sold" : @22 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+            [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product C", @"inventory" : @33, @"price" :@11.54 , @"units-sold" : @44 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
         }//end if models.cout <= 0 
     };//end selfSuccessBlock
     

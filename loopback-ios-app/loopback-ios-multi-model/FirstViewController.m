@@ -65,12 +65,12 @@
     };//end selfSuccessBlock
 
     //Get a local representation of the 'weapons' model type
-    LBModelPrototype *objectB = [ [AppDelegate adapter]  prototypeWithName:@"products"];
+    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"products"];
     
     // Invoke the allWithSuccess message for the 'weapons' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/products
-
-    [objectB allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
+    
+    [prototype allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
     return;
     //*/
     [AppDelegate showGuideMessage: @"Step1 uncomment getModels"];
@@ -86,9 +86,9 @@
     ///*
     //Get a local representation of the 'weapons' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
-
+    
     //create new LBModel of type
-    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New Product", @"inventory" : @99 }];
+    LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New Product", @"inventory" : @99, @"price" :@13.34 , @"units-sold" : @44 }];
 
     // Define the load error functional block
     void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
@@ -243,7 +243,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initializeServerWithData ];
+    [AppDelegate initializeServerWithData];
     [AppDelegate showGuideMessage: @"Tab 'One' Step1"];
 }
 
@@ -254,6 +254,7 @@
 }
 
 
+/*
 - (void) initializeServerWithData
 {
     // Define the load error functional block
@@ -272,5 +273,6 @@
     [ [prototype modelWithDictionary:@{ @"name": @"Product C", @"inventory" : @33 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     
 }
+*/
 
 @end
