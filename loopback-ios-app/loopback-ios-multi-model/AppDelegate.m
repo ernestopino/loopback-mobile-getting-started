@@ -25,6 +25,11 @@ static LBRESTAdapter * _adapter = nil;
 // initializeServerWithDataIfNeeded
 + (void) initializeServerWithData
 {
+    [self initializeProductsData];
+}
+
++ (void) initializeProductsData
+{
     LBModelPrototype *ObjectPrototype = [ [AppDelegate adapter]  prototypeWithName:@"products"];
     
     //try and read from the endpoint if it comes back with empty set the push some default data to it.
@@ -48,11 +53,12 @@ static LBRESTAdapter * _adapter = nil;
             [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product A", @"inventory" : @11, @"price" :@66.34 , @"units-sold" : @11 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
             [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product B", @"inventory" : @22, @"price" :@22.34 , @"units-sold" : @22 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
             [ [ObjectPrototype modelWithDictionary:@{ @"name": @"Product C", @"inventory" : @33, @"price" :@11.54 , @"units-sold" : @44 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-        }//end if models.cout <= 0 
+        }//end if models.cout <= 0
     };//end selfSuccessBlock
     
     [ObjectPrototype allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
 }
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
