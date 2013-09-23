@@ -63,18 +63,17 @@ If you are creating a new iOS Application or want to integrate an existing App y
 
 1. Install and configure the StrongLoop Suite on your dev environment.  more information on installing LoopBack can be found in the [getting started ](http://alpha.strongloop.com/strongloop-suite/get-started/) section and the  [Quick Start Guide ](http://alpha.strongloop.com/strongloop-suite/quick-start-guide/)
 
-2. Create the [LoopBack Server](http://strongloop.com/loopbackserver) on your host machine ( this can be your OSX development box , or one of our cloud providers )
+2. Create the [LoopBack Server](http://strongloop.com/loopbackserver) on your host machine ( this can be your OSX development box , or one of our [cloud providers](http://strongloop.com/get-started/) : Rackspace, Amazon, Cloud Foundry, Heroku , Red Hat OpenShift, C9 )
 ```sh
-$ slc lb api myLoopBackApp
+$ slc lb project myLoopBackApp
 $ cd myLoopBackApp
-$ slc npm install
+$ slc install
 ```
 
 3. Create a [model](#models) type on the LoopBack server called 'product' in our Loopback instance
 ```sh
 $ slc lb model product
 ```
-
 Console Output:
 ```sh
 Created product model.
