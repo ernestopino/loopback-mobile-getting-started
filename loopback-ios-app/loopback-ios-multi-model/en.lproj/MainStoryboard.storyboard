@@ -148,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-43" y="-233"/>
+            <point key="canvasLocation" x="50" y="-204"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -326,8 +326,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="acd-cH-h5D">
-                                <rect key="frame" x="13" y="79" width="194" height="60"/>
+                                <rect key="frame" x="13" y="79" width="194" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HT3-sQ-LO4"/>
                                     <constraint firstAttribute="width" constant="194" id="sbV-PO-QPo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -343,7 +344,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAe-FZ-iLT">
-                                <rect key="frame" x="13" y="251" width="194" height="60"/>
+                                <rect key="frame" x="13" y="267" width="194" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="lzQ-fY-LtH"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Lowest Price" backgroundImage="button.png">
                                     <color key="titleColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
@@ -399,7 +403,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Response ..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sy-rf-sHf">
-                                <rect key="frame" x="13" y="147" width="243" height="23"/>
+                                <rect key="frame" x="13" y="131" width="243" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="Rb5-0e-szw"/>
                                     <constraint firstAttribute="width" constant="243" id="wdT-ZS-eKg"/>
@@ -552,8 +556,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l2s-m4-fxq">
-                                <rect key="frame" x="42" y="333" width="194" height="60"/>
+                                <rect key="frame" x="42" y="349" width="194" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QBx-YQ-cQb"/>
                                     <constraint firstAttribute="width" constant="194" id="amg-U0-UQ0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -622,8 +627,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm1-Yq-oKx">
-                                <rect key="frame" x="12" y="100" width="194" height="60"/>
+                                <rect key="frame" x="12" y="100" width="194" height="44"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="4fm-2p-oVn"/>
                                     <constraint firstAttribute="width" constant="194" id="KN3-Od-g7v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -639,7 +645,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80x-Kg-SmZ">
-                                <rect key="frame" x="12" y="227" width="194" height="60"/>
+                                <rect key="frame" x="12" y="243" width="194" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rMZ-Da-9ht"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Time Trial Two" backgroundImage="button.png">
                                     <color key="titleColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>

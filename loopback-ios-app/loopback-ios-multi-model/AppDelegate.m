@@ -126,9 +126,8 @@ static LBRESTAdapter * _adapter = nil;
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) updateExistingModel' in 'SecondViewController.m' " forKey:@"Step2 uncomment updateExistingModel"];
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) deleteExistingModel' in 'SecondViewController.m' " forKey:@"Step2 uncomment deleteExistingModel"];
     
-    
     //Tab3
-    [_guide setObject:@"For this step uncomment the second comment block in app.js to publish a new set of models" forKey:@"Tab 'Three' Step3"];
+    [_guide setObject:@"For this step simple verify the filter and find methods in the mobile app are consistent with http://localhost:8080/explore " forKey:@"Tab 'Three' Step3"];
     
     //Step 3 : uncomment reminders
     [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod1' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod1"];

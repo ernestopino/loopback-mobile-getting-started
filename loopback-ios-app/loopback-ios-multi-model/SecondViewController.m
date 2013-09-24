@@ -74,7 +74,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    ///*
+    /*
     void (^loadFailBlock)(NSError *) = ^(NSError *error) {
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
@@ -90,7 +90,7 @@
         [self.myTableView reloadData];
     } failure:loadFailBlock];
     return;
-    //*/
+    */
     [AppDelegate showGuideMessage: @"Step2 uncomment getModels"];
     
 };//end getModels
@@ -102,7 +102,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    ///*
+    /*
     NSLog( @"CreateNew Model and push to the server");
     
     void (^saveNewFailBlock)(NSError *) = ^(NSError *error) {
@@ -125,7 +125,7 @@
     } failure:saveNewFailBlock];
     //[ modelInstance invokeMethod:@"custommethod" parameters:<#(NSDictionary *)#> success:<#^(id value)success#> failure:<#^(NSError *error)failure#>]
     return;
-    //*/
+    */
     
     [AppDelegate showGuideMessage: @"Step2 uncomment createNewModel"];
 }//end createNewModuleAndPushToServer
@@ -136,7 +136,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    ///*
+    /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -168,37 +168,10 @@
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    //*/
+    */
+    
     [AppDelegate showGuideMessage: @"Step2 uncomment updateExistingModel"];
     
-    /*
-    NSLog( @"Update an Existing Model and push to the server");
-    
-    void (^saveNewFailBlock)(NSError *) = ^(NSError *error) {
-        [AppDelegate showGuideMessage: @"No Server Found"];
-    };
-    
-    LBModelPrototype *prototype = [self.adapter prototypeWithName:@"car"];
-    
-    Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{ }];
-    NSLog( @"Created local Object %@", modelInstance.name );
-    modelInstance.name = @"Telsa Model S";
-    modelInstance.milage = @9;
-    NSLog( @"Created local Object %@", [modelInstance toDictionary]);
-    
-    //STAssertEqualObjects(model.bars, @1, @"Invalid bars.");
-    //STAssertNil(model._id, nil, @"Invalid id");
-    
-    [modelInstance saveWithSuccess:^{
-        NSLog( @"Save Success %@", modelInstance.name );
-        //lastId = model._id;
-        //STAssertNotNil(model._id, @"Invalid id");
-        
-        // call a 'local' refresh to update the tableView
-        [self getModels];
-        
-    } failure:saveNewFailBlock];
-    */
 }//end updateExistingModelAndPushToServer
 
 - ( void ) deleteExistingModel
@@ -207,7 +180,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    ///*
+    /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -239,7 +212,7 @@
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    //*/
+    */
     [AppDelegate showGuideMessage: @"Step2 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 
