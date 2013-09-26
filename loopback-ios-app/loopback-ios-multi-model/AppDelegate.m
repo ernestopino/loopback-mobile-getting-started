@@ -59,6 +59,25 @@ static LBRESTAdapter * _adapter = nil;
     [ObjectPrototype allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
 }
 
++ (void) initializeStoresData
+{
+    // Define the load error functional block
+    void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error on Save %@", error.description);
+    };
+    
+    // Define the load success block for saveNewSuccessBlock message
+    void (^saveNewSuccessBlock)() = ^() {
+    };
+    
+    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
+    //Persist the newly created Model to the LoopBack node server
+    [ [prototype modelWithDictionary:@{ @"name": @"Toyota FJ", @"milage" : @200 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+    [ [prototype modelWithDictionary:@{ @"name": @"VW Bug", @"milage" : @300 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+    [ [prototype modelWithDictionary:@{ @"name": @"Hoda Accord", @"milage" : @400 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
+    
+}
+
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -112,9 +131,9 @@ static LBRESTAdapter * _adapter = nil;
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) deleteExistingModel' in 'FirstViewController.m' " forKey:@"Step1 uncomment deleteExistingModel"];
     
     //Success Messages
-    [_guide setObject:@"Congradulations you created a model instance on the server, press 'Referesh' to update the local Table View " forKey:@"Tab 'One' CreateSuccess"];
-    [_guide setObject:@"Congradulations you updated a model instance on the server, press 'Referesh' to update the local Table View " forKey:@"Tab 'One' UpdateSuccess"];
-    [_guide setObject:@"Congradulations you deleted a model instance on the server, press 'Referesh' to update the local Table View " forKey:@"Tab 'One' DeleteSuccess"];
+    [_guide setObject:@"You created a model instance on the server, press 'Refresh' to update the local Table View " forKey:@"Tab 'One' CreateSuccess"];
+    [_guide setObject:@"You updated a model instance on the server, press 'Refresh' to update the local Table View " forKey:@"Tab 'One' UpdateSuccess"];
+    [_guide setObject:@"You deleted a model instance on the server, press 'Refresh' to update the local Table View " forKey:@"Tab 'One' DeleteSuccess"];
     
     
     //Tab2
@@ -127,12 +146,9 @@ static LBRESTAdapter * _adapter = nil;
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) deleteExistingModel' in 'SecondViewController.m' " forKey:@"Step2 uncomment deleteExistingModel"];
     
     //Tab3
-    [_guide setObject:@"For this step simple verify the filter and find methods in the mobile app are consistent with http://localhost:8080/explore " forKey:@"Tab 'Three' Step3"];
+    [_guide setObject:@"For this step verify the filter and find methods in ThirdViewController.m give you the product with lowest price and the lowest inventory http://localhost:8080/explore " forKey:@"Tab 'Three' Step3"];
     
     //Step 3 : uncomment reminders
-    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod1' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod1"];
-    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod2' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod2"];
-    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) actionMethod3' in 'ThirdViewController.m' ?" forKey:@"Step3 uncomment actionMethod3"];
     
     //Tab4
     [_guide setObject:@"For this step uncomment the third comment block code in app.js to publish a new set of models" forKey:@"Tab 'Four' Step4"];

@@ -49,7 +49,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    // /*
     // Define the load error functional block
     void (^loadErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);
@@ -72,7 +72,7 @@
     
     [prototype allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
     return;
-    */
+    // */
     [AppDelegate showGuideMessage: @"Step1 uncomment getModels"];
 };
 
@@ -83,7 +83,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    // /*
     //Get a local representation of the 'weapons' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
     
@@ -107,7 +107,7 @@
     //Persist the newly created Model to the LoopBack node server
     [model saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     return;
-    */
+    // */
     [AppDelegate showGuideMessage: @"Step1 uncomment createNewModel"];
 };
 
@@ -117,7 +117,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
 
-    /*
+    // /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -149,7 +149,7 @@
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    // */
     
     [AppDelegate showGuideMessage: @"Step1 uncomment updateExistingModel"];
 }//end updateExistingModelAndPushToServer
@@ -160,7 +160,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
 
-    /*
+    // /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -192,7 +192,7 @@
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    // */
     [AppDelegate showGuideMessage: @"Step1 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 

@@ -215,7 +215,7 @@
                                     <constraint firstAttribute="width" constant="194" id="kAB-ts-REA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Referesh" backgroundImage="button.png">
+                                <state key="normal" title="Refresh" backgroundImage="button.png">
                                     <color key="titleColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -549,8 +549,11 @@
                                 <color key="textColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Crush Server Latency with Node&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKE-t0-1V6">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Customize your API &quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKE-t0-1V6">
                                 <rect key="frame" x="34" y="291" width="277" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="277" id="eZy-o5-3lu"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -629,11 +632,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm1-Yq-oKx">
                                 <rect key="frame" x="12" y="100" width="194" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="4fm-2p-oVn"/>
                                     <constraint firstAttribute="width" constant="194" id="KN3-Od-g7v"/>
+                                    <constraint firstAttribute="height" constant="44" id="uoM-Iw-Oai"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Time Trial One" backgroundImage="button.png">
+                                <state key="normal" title="Custom Method 1" backgroundImage="button.png">
                                     <color key="titleColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -645,12 +648,12 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80x-Kg-SmZ">
-                                <rect key="frame" x="12" y="243" width="194" height="44"/>
+                                <rect key="frame" x="12" y="248" width="194" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="rMZ-Da-9ht"/>
+                                    <constraint firstAttribute="height" constant="44" id="Ei3-Xb-mYQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Time Trial Two" backgroundImage="button.png">
+                                <state key="normal" title="Custom Method 2" backgroundImage="button.png">
                                     <color key="titleColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -674,7 +677,7 @@
                                 <color key="textColor" red="0.058823533359999999" green="0.33725491169999999" blue="0.16862745579999999" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Crush Server Latency&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-fM-BCG">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="&quot;Customize your API&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qpP-fM-BCG">
                                 <rect key="frame" x="47" y="15" width="277" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="277" id="0ea-Eu-DdL"/>
@@ -710,7 +713,6 @@
                             <constraint firstItem="bm1-Yq-oKx" firstAttribute="leading" secondItem="svS-hh-7Jw" secondAttribute="leading" type="default" id="5tD-wE-Dun"/>
                             <constraint firstAttribute="trailing" secondItem="5b9-fE-buB" secondAttribute="trailing" constant="12" id="9o8-DW-cbJ"/>
                             <constraint firstItem="80x-Kg-SmZ" firstAttribute="leading" secondItem="bm1-Yq-oKx" secondAttribute="leading" type="default" id="CND-np-8al"/>
-                            <constraint firstAttribute="bottom" secondItem="80x-Kg-SmZ" secondAttribute="bottom" constant="124" id="Dyg-hc-9Py"/>
                             <constraint firstItem="5b9-fE-buB" firstAttribute="bottom" secondItem="XQ1-GX-ChQ" secondAttribute="bottom" type="default" id="KTo-S9-qJt"/>
                             <constraint firstItem="svS-hh-7Jw" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="12" id="OhJ-KM-bPJ"/>
                             <constraint firstItem="svS-hh-7Jw" firstAttribute="baseline" secondItem="qpP-fM-BCG" secondAttribute="baseline" type="default" id="RyB-Lr-51U"/>
@@ -719,6 +721,7 @@
                             <constraint firstItem="bm1-Yq-oKx" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="100" id="ewn-Zv-0BK"/>
                             <constraint firstAttribute="bottom" secondItem="qhz-Ci-Fil" secondAttribute="bottom" constant="81" id="hPz-rZ-WAM"/>
                             <constraint firstItem="rSS-ih-384" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="179" id="iyR-QO-Ocw"/>
+                            <constraint firstAttribute="bottom" secondItem="80x-Kg-SmZ" secondAttribute="bottom" constant="119" id="mtA-mn-dTq"/>
                             <constraint firstItem="qpP-fM-BCG" firstAttribute="leading" secondItem="svS-hh-7Jw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nvY-G1-z6Z"/>
                             <constraint firstItem="rSS-ih-384" firstAttribute="leading" secondItem="XQ1-GX-ChQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="p49-jO-3xb"/>
                             <constraint firstItem="svS-hh-7Jw" firstAttribute="leading" secondItem="XQ1-GX-ChQ" secondAttribute="leading" constant="12" id="rL9-1R-aQA"/>

@@ -74,7 +74,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    // /*
     void (^loadFailBlock)(NSError *) = ^(NSError *error) {
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
@@ -90,7 +90,7 @@
         [self.myTableView reloadData];
     } failure:loadFailBlock];
     return;
-    */
+    // */
     [AppDelegate showGuideMessage: @"Step2 uncomment getModels"];
     
 };//end getModels
@@ -102,7 +102,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    // /*
     NSLog( @"CreateNew Model and push to the server");
     
     void (^saveNewFailBlock)(NSError *) = ^(NSError *error) {
@@ -125,7 +125,7 @@
     } failure:saveNewFailBlock];
     //[ modelInstance invokeMethod:@"custommethod" parameters:<#(NSDictionary *)#> success:<#^(id value)success#> failure:<#^(NSError *error)failure#>]
     return;
-    */
+    // */
     
     [AppDelegate showGuideMessage: @"Step2 uncomment createNewModel"];
 }//end createNewModuleAndPushToServer
@@ -136,7 +136,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    // /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -168,7 +168,7 @@
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    // */
     
     [AppDelegate showGuideMessage: @"Step2 uncomment updateExistingModel"];
     
@@ -180,7 +180,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    // /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -212,7 +212,7 @@
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    // */
     [AppDelegate showGuideMessage: @"Step2 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 
@@ -263,11 +263,10 @@
     return cell;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self initializeServerWithData];
+    [AppDelegate initializeStoresData];
     [AppDelegate showGuideMessage: @"Tab 'Two' Step2"];
 }
 
@@ -276,40 +275,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void) initializeServerWithData
-{
-    // Define the load error functional block
-    void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
-        NSLog( @"Error on Save %@", error.description);
-    };
-    
-    // Define the load success block for saveNewSuccessBlock message
-    void (^saveNewSuccessBlock)() = ^() {
-    };
-    
-    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
-    //Persist the newly created Model to the LoopBack node server
-    [ [prototype modelWithDictionary:@{ @"name": @"Toyota FJ", @"milage" : @200 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    [ [prototype modelWithDictionary:@{ @"name": @"VW Bug", @"milage" : @300 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    [ [prototype modelWithDictionary:@{ @"name": @"Hoda Accord", @"milage" : @400 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    
-}
-
-
-/*
- //MATT REMOVE ME
- You can use the LoopBack SDK LBMODEL as a parent for Mobile Objective-C Objects Making it easy to add CRUD and
- remoting featues to your Objects.
- 
- This tab provides the Same CRUD featues as the First Tab only we are using an inheritence paradigm instead
- of functional blocks.
- 
- In this case we create a local Parent object Product that inherits from LBModel and a ProductPrototype that is descended from LBModelPrototype
- 
- */
-
-
 
 
 @end
