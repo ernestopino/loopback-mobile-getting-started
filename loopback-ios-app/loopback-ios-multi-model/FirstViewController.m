@@ -29,7 +29,7 @@
 
 #import "FirstViewController.h"
 #import "AppDelegate.h"
-
+    
 @interface FirstViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) NSArray *tableData;
@@ -49,13 +49,6 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
-    // Define the load error functional block
-    void (^loadErrorBlock)(NSError *) = ^(NSError *error) {
-        NSLog( @"Error %@", error.description);
-        [AppDelegate showGuideMessage: @"No Server Found"];
-    };//end selfFailblock
-    
     // Define the load success block for the LBModelPrototype allWithSuccess message
     void (^loadSuccessBlock)(NSArray *) = ^(NSArray *models) {
         NSLog( @"selfSuccessBlock %d", models.count);
@@ -63,16 +56,22 @@
         [self.myTableView reloadData];
         // [self showGuideMessage:@"Great! you just pulled code from node"];
     };//end selfSuccessBlock
-
-    //Get a local representation of the 'weapons' model type
+    
+    // Define the load error functional block
+    void (^loadErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };//end selfFailblock
+    
+    //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"products"];
     
-    // Invoke the allWithSuccess message for the 'weapons' LBModelPrototype
+    // Invoke the allWithSuccess message for the 'products' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/products
     
     [prototype allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
     return;
-    */
+    
     [AppDelegate showGuideMessage: @"Step1 uncomment getModels"];
 };
 
@@ -83,18 +82,11 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
-    //Get a local representation of the 'weapons' model type
+    //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
     
     //create new LBModel of type
     LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New Product", @"inventory" : @99, @"price" :@13.34 , @"units-sold" : @44 }];
-
-    // Define the load error functional block
-    void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
-        NSLog( @"Error on Save %@", error.description);
-        [AppDelegate showGuideMessage: @"No Server Found"];
-    };
     
     // Define the load success block for saveNewSuccessBlock message
     void (^saveNewSuccessBlock)() = ^() {
@@ -104,10 +96,16 @@
         [self getModels];
     };
     
+    // Define the load error functional block
+    void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error on Save %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };
+    
     //Persist the newly created Model to the LoopBack node server
     [model saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     return;
-    */
+    
     [AppDelegate showGuideMessage: @"Step1 uncomment createNewModel"];
 };
 
@@ -116,13 +114,6 @@
     // ++++++++++++++++++++++++++++++++++++
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
-
-    /*
-    // Define the find error functional block
-    void (^findErrorBlock)(NSError *) = ^(NSError *error) {
-        NSLog( @"Error No model found with ID %@", error.description);
-        [AppDelegate showGuideMessage: @"No Server Found"];
-    };
     
     // Define your success functional block
     void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
@@ -133,6 +124,7 @@
         void (^saveErrorBlock)(NSError *) = ^(NSError *error) {
             NSLog( @"Error on Save %@", error.description);
         };
+        
         void (^saveSuccessBlock)() = ^() {
             [AppDelegate showGuideMessage: @"Tab 'One' UpdateSuccess"];
             
@@ -141,15 +133,21 @@
         };
         [model saveWithSuccess:saveSuccessBlock failure:saveErrorBlock];
     };
+    
+    // Define the find error functional block
+    void (^findErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error No model found with ID %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };
 
-    //Get a local representation of the 'weapons' model type
+    //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
 
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    
     
     [AppDelegate showGuideMessage: @"Step1 uncomment updateExistingModel"];
 }//end updateExistingModelAndPushToServer
@@ -159,13 +157,6 @@
     // ++++++++++++++++++++++++++++++++++++
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
-
-    /*
-    // Define the find error functional block
-    void (^findErrorBlock)(NSError *) = ^(NSError *error) {
-        NSLog( @"Error No model found with ID %@", error.description);
-        [AppDelegate showGuideMessage: @"No Server Found"];
-    };
     
     // Define your success functional block
     void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
@@ -184,15 +175,21 @@
         //Destroy this model instance on the LoopBack node server
         [ model destroyWithSuccess:removeSuccessBlock failure:removeErrorBlock ];
     };
-
-    //Get a local representation of the 'weapons' model type
+    
+    // Define the find error functional block
+    void (^findErrorBlock)(NSError *) = ^(NSError *error) {
+        NSLog( @"Error No model found with ID %@", error.description);
+        [AppDelegate showGuideMessage: @"No Server Found"];
+    };
+    
+    //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
 
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    
     [AppDelegate showGuideMessage: @"Step1 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 

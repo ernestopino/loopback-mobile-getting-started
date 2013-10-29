@@ -27,7 +27,6 @@
 #import "AppDelegate.h"
 
 
-
 //Define a Local Objective C representation of the our LoopBack mobile model type
 @interface Car : LBModel
 @property (nonatomic, copy) NSString *name;
@@ -50,6 +49,8 @@
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (weak, nonatomic) CarPrototype *prototypeObjectReference;
 @property (strong, nonatomic) NSArray *tableData;
+
+@property (strong, nonatomic) Car *myCarModelInstance;
 @end
 
 @implementation SecondViewController
@@ -60,6 +61,13 @@
     if (!_prototypeObjectReference)
         _prototypeObjectReference = (CarPrototype *)[ [AppDelegate adapter]  prototypeWithClass:[CarPrototype class]];
     return _prototypeObjectReference;
+}
+
+- (Car *) myCarModelInstance
+{
+    if (_myCarModelInstance)
+        _myCarModelInstance = [[Car alloc]init];
+    return _myCarModelInstance;
 }
 
 - (NSArray *) tableData
@@ -74,7 +82,6 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
     void (^loadFailBlock)(NSError *) = ^(NSError *error) {
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
@@ -90,7 +97,7 @@
         [self.myTableView reloadData];
     } failure:loadFailBlock];
     return;
-    */
+    
     [AppDelegate showGuideMessage: @"Step2 uncomment getModels"];
     
 };//end getModels
@@ -102,7 +109,6 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
     NSLog( @"CreateNew Model and push to the server");
     
     void (^saveNewFailBlock)(NSError *) = ^(NSError *error) {
@@ -123,9 +129,9 @@
         // call a 'local' refresh to update the tableView
         [self getModels];
     } failure:saveNewFailBlock];
+    
     //[ modelInstance invokeMethod:@"custommethod" parameters:<#(NSDictionary *)#> success:<#^(id value)success#> failure:<#^(NSError *error)failure#>]
     return;
-    */
     
     [AppDelegate showGuideMessage: @"Step2 uncomment createNewModel"];
 }//end createNewModuleAndPushToServer
@@ -136,7 +142,7 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
+    
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -161,14 +167,13 @@
         [model saveWithSuccess:saveSuccessBlock failure:saveErrorBlock];
     };
     
-    //Get a local representation of the 'weapons' model type
+    //Get a local representation of the 'cars' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
     
     [AppDelegate showGuideMessage: @"Step2 uncomment updateExistingModel"];
     
@@ -180,7 +185,6 @@
     // Uncomment the comment block below to call a custom method on the server
     // ++++++++++++++++++++++++++++++++++++
     
-    /*
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error No model found with ID %@", error.description);
@@ -205,14 +209,14 @@
         [ model destroyWithSuccess:removeSuccessBlock failure:removeErrorBlock ];
     };
     
-    //Get a local representation of the 'weapons' model type
+    //Get a local representation of the 'car' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
-    */
+    
     [AppDelegate showGuideMessage: @"Step2 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 

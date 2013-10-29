@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A57CF636-A2EA-456F-A1E1-904E4A8DF89C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>loopback-ios-multi-model</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>624D9C4A-1806-4177-AC91-C7970B5C98BA</key>
+		<string>ssh://github.com/strongloop-community/loopback-mobile-getting-started.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>loopback-ios-app/loopback-ios-multi-model.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>624D9C4A-1806-4177-AC91-C7970B5C98BA</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/strongloop-community/loopback-mobile-getting-started.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>624D9C4A-1806-4177-AC91-C7970B5C98BA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>624D9C4A-1806-4177-AC91-C7970B5C98BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>loopback-mobile-getting-started</string>
+		</dict>
+	</array>
+</dict>
+</plist>
