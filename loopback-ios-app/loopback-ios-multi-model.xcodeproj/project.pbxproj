@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE90C00E181F387A00A4A1F4 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C00C181F387A00A4A1F4 /* home.png */; };
+		AE90C00F181F387A00A4A1F4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C00D181F387A00A4A1F4 /* home@2x.png */; };
 		AE9D02A017A09FB500306CEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D029F17A09FB500306CEC /* UIKit.framework */; };
 		AE9D02A217A09FB500306CEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D02A117A09FB500306CEC /* Foundation.framework */; };
 		AE9D02A417A09FB500306CEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE9D02A317A09FB500306CEC /* CoreGraphics.framework */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE90C00C181F387A00A4A1F4 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		AE90C00D181F387A00A4A1F4 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		AE9D029C17A09FB500306CEC /* loopback-ios-multi-model.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "loopback-ios-multi-model.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9D029F17A09FB500306CEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		AE9D02A117A09FB500306CEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,6 +207,8 @@
 				AEC5815B17BD300C00DDA22C /* num-four.png */,
 				AEC5815C17BD300C00DDA22C /* num-four@2x.png */,
 				AEC5815D17BD300C00DDA22C /* num-one.png */,
+				AE90C00C181F387A00A4A1F4 /* home.png */,
+				AE90C00D181F387A00A4A1F4 /* home@2x.png */,
 				AEC5815E17BD300C00DDA22C /* num-one@2x.png */,
 				AEC5815F17BD300C00DDA22C /* num-three.png */,
 				AEC5816017BD300C00DDA22C /* num-three@2x.png */,
@@ -329,6 +335,7 @@
 				AE9D02C517A09FB500306CEC /* second.png in Resources */,
 				AE9D02C717A09FB500306CEC /* second@2x.png in Resources */,
 				AE9D02EA17A0A5C500306CEC /* button.png in Resources */,
+				AE90C00E181F387A00A4A1F4 /* home.png in Resources */,
 				AE9D02EC17A0A61900306CEC /* appiconStrongLoop57.png in Resources */,
 				AE9D02EE17A0A66100306CEC /* icon_57x57.png in Resources */,
 				AE9D02F717A0BECC00306CEC /* UIButtonBarRefresh.png in Resources */,
@@ -344,6 +351,7 @@
 				AEC5816A17BD300D00DDA22C /* num-two@2x.png in Resources */,
 				AEC5816D17BD3E3600DDA22C /* wip.png in Resources */,
 				AEC5816E17BD3E3600DDA22C /* wip@2x.png in Resources */,
+				AE90C00F181F387A00A4A1F4 /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
