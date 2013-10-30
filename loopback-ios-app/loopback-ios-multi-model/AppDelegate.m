@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "GAI.h"
 
 @interface AppDelegate ()
 @end
@@ -75,14 +76,16 @@ static LBRESTAdapter * _adapter = nil;
     [ [prototype modelWithDictionary:@{ @"name": @"Toyota FJ", @"milage" : @200 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     [ [prototype modelWithDictionary:@{ @"name": @"VW Bug", @"milage" : @300 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     [ [prototype modelWithDictionary:@{ @"name": @"Hoda Accord", @"milage" : @400 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    
 }
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    [GAI sharedInstance].dispatchInterval = 20;
+    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-41394697-4"];
+    
     return YES;
 }
 							
@@ -105,7 +108,8 @@ static LBRESTAdapter * _adapter = nil;
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [GAI sharedInstance].optOut = ![[NSUserDefaults standardUserDefaults] boolForKey:kAllowTracking];
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -113,7 +117,8 @@ static LBRESTAdapter * _adapter = nil;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-
+static NSString *const kTrackingId = @"UA-TRACKING-ID";
+static NSString *const kAllowTracking = @"allowTracking";
 
 + (void) showGuideMessage : ( NSString *) message
 {

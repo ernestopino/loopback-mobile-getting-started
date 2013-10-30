@@ -29,7 +29,7 @@
 
 #import "FirstViewController.h"
 #import "AppDelegate.h"
-    
+
 @interface FirstViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (strong, nonatomic) NSArray *tableData;
@@ -242,6 +242,11 @@
     [super viewDidLoad];
     [AppDelegate initializeServerWithData];
     [AppDelegate showGuideMessage: @"Tab 'One' Step1"];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.screenName = @"FirstViewController";
 }
 
 - (void)didReceiveMemoryWarning

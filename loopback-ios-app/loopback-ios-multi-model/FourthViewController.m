@@ -128,6 +128,11 @@
     //[AppDelegate showGuideMessage: @"Tab 'Four' Step4"];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.screenName = @"FourthViewController";
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

@@ -769,6 +769,7 @@
                             <constraint firstItem="cvQ-mu-0iC" firstAttribute="top" secondItem="svS-hh-7Jw" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0eK-fe-vQa"/>
                             <constraint firstItem="bm1-Yq-oKx" firstAttribute="leading" secondItem="cvQ-mu-0iC" secondAttribute="leading" type="default" id="70e-v6-kkk"/>
                             <constraint firstItem="zVm-Pf-ZQc" firstAttribute="trailing" secondItem="QKe-Zo-AUa" secondAttribute="trailing" type="default" id="8hg-oT-tH6"/>
+                            <constraint firstAttribute="bottom" secondItem="80x-Kg-SmZ" secondAttribute="bottom" constant="119" id="93M-Xo-Gbp"/>
                             <constraint firstItem="cvQ-mu-0iC" firstAttribute="leading" secondItem="svS-hh-7Jw" secondAttribute="leading" type="default" id="CIx-2B-rYp"/>
                             <constraint firstItem="80x-Kg-SmZ" firstAttribute="leading" secondItem="bm1-Yq-oKx" secondAttribute="leading" type="default" id="CND-np-8al"/>
                             <constraint firstItem="rSS-ih-384" firstAttribute="leading" secondItem="XQ1-GX-ChQ" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="CwD-Ta-anA"/>
@@ -778,16 +779,15 @@
                             <constraint firstItem="svS-hh-7Jw" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="12" id="OhJ-KM-bPJ"/>
                             <constraint firstItem="zVm-Pf-ZQc" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="90" id="Pzk-dM-rzX"/>
                             <constraint firstItem="svS-hh-7Jw" firstAttribute="baseline" secondItem="qpP-fM-BCG" secondAttribute="baseline" type="default" id="RyB-Lr-51U"/>
-                            <constraint firstAttribute="trailing" secondItem="5b9-fE-buB" secondAttribute="trailing" constant="13" id="Xsu-eM-a9U"/>
                             <constraint firstItem="80x-Kg-SmZ" firstAttribute="trailing" secondItem="bm1-Yq-oKx" secondAttribute="trailing" type="default" id="Y9E-fn-FNN"/>
                             <constraint firstItem="rSS-ih-384" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="200" id="c9J-jF-Un3"/>
                             <constraint firstItem="bm1-Yq-oKx" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="136" id="cw2-Rc-jqL"/>
                             <constraint firstItem="rSS-ih-384" firstAttribute="leading" secondItem="qhz-Ci-Fil" secondAttribute="leading" type="default" id="gFy-8Z-YXV"/>
-                            <constraint firstAttribute="bottom" secondItem="qhz-Ci-Fil" secondAttribute="bottom" constant="81" id="hPz-rZ-WAM"/>
                             <constraint firstItem="QKe-Zo-AUa" firstAttribute="centerX" secondItem="qpP-fM-BCG" secondAttribute="centerX" type="default" id="iPe-4D-Giw"/>
-                            <constraint firstAttribute="bottom" secondItem="80x-Kg-SmZ" secondAttribute="bottom" constant="119" id="mtA-mn-dTq"/>
                             <constraint firstItem="QKe-Zo-AUa" firstAttribute="top" secondItem="XQ1-GX-ChQ" secondAttribute="top" constant="69" id="nru-2c-zka"/>
                             <constraint firstItem="qpP-fM-BCG" firstAttribute="leading" secondItem="svS-hh-7Jw" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nvY-G1-z6Z"/>
+                            <constraint firstAttribute="bottom" secondItem="qhz-Ci-Fil" secondAttribute="bottom" constant="81" id="vSi-Nn-F3g"/>
+                            <constraint firstAttribute="trailing" secondItem="5b9-fE-buB" secondAttribute="trailing" constant="13" id="wKT-ls-edW"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Step 4" image="num-four.png" id="g7L-ot-1O3"/>

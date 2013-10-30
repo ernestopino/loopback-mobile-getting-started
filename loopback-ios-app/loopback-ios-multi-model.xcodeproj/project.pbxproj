@@ -59,6 +59,11 @@
 		AEC5816A17BD300D00DDA22C /* num-two@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816217BD300C00DDA22C /* num-two@2x.png */; };
 		AEC5816D17BD3E3600DDA22C /* wip.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816B17BD3E3600DDA22C /* wip.png */; };
 		AEC5816E17BD3E3600DDA22C /* wip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816C17BD3E3600DDA22C /* wip@2x.png */; };
+		AEE8D39E1821A56E00F0C52C /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D39D1821A56E00F0C52C /* libGoogleAnalytics_debug.a */; };
+		AEE8D3A01821B5A700F0C52C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D39F1821B5A700F0C52C /* libGoogleAnalyticsServices.a */; };
+		AEE8D3A21821B5C300F0C52C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */; };
+		AEE8D3A41821B5D300F0C52C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A31821B5D300F0C52C /* CoreData.framework */; };
+		AEE8D3A61821B5E800F0C52C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A51821B5E800F0C52C /* libz.dylib */; };
 		B3EE1C0117CE9D15001ECC06 /* LoopBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */; };
 		B3EE1C0317CFE6DC001ECC06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -136,6 +141,17 @@
 		AEC5816217BD300C00DDA22C /* num-two@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "num-two@2x.png"; sourceTree = "<group>"; };
 		AEC5816B17BD3E3600DDA22C /* wip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wip.png; sourceTree = "<group>"; };
 		AEC5816C17BD3E3600DDA22C /* wip@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wip@2x.png"; sourceTree = "<group>"; };
+		AEE8D3971821A56E00F0C52C /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		AEE8D3981821A56E00F0C52C /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		AEE8D3991821A56E00F0C52C /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		AEE8D39A1821A56E00F0C52C /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		AEE8D39B1821A56E00F0C52C /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		AEE8D39C1821A56E00F0C52C /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		AEE8D39D1821A56E00F0C52C /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		AEE8D39F1821B5A700F0C52C /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AEE8D3A31821B5D300F0C52C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		AEE8D3A51821B5E800F0C52C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoopBack.framework; sourceTree = "<group>"; };
 		B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -145,9 +161,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE8D3A61821B5E800F0C52C /* libz.dylib in Frameworks */,
+				AEE8D3A41821B5D300F0C52C /* CoreData.framework in Frameworks */,
+				AEE8D3A21821B5C300F0C52C /* SystemConfiguration.framework in Frameworks */,
 				AE9D02A017A09FB500306CEC /* UIKit.framework in Frameworks */,
 				AE9D02A217A09FB500306CEC /* Foundation.framework in Frameworks */,
 				AE9D02A417A09FB500306CEC /* CoreGraphics.framework in Frameworks */,
+				AEE8D3A01821B5A700F0C52C /* libGoogleAnalyticsServices.a in Frameworks */,
+				AEE8D39E1821A56E00F0C52C /* libGoogleAnalytics_debug.a in Frameworks */,
 				B3EE1C0317CFE6DC001ECC06 /* CoreLocation.framework in Frameworks */,
 				B3EE1C0117CE9D15001ECC06 /* LoopBack.framework in Frameworks */,
 			);
@@ -205,6 +226,9 @@
 		AE9D029E17A09FB500306CEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEE8D3A51821B5E800F0C52C /* libz.dylib */,
+				AEE8D3A31821B5D300F0C52C /* CoreData.framework */,
+				AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */,
 				B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */,
 				B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */,
 				AE9D029F17A09FB500306CEC /* UIKit.framework */,
@@ -254,6 +278,7 @@
 				AE9D02EB17A0A61900306CEC /* appiconStrongLoop57.png */,
 				AE9D02F917A0C17300306CEC /* button-download-small.png */,
 				AE9D02BD17A09FB500306CEC /* first.png */,
+				AEE8D3961821A56E00F0C52C /* GALibrary */,
 				AE90C010181F3E2200A4A1F4 /* resources */,
 				AE9D02E917A0A5C500306CEC /* button.png */,
 				AE9D02BF17A09FB500306CEC /* first@2x.png */,
@@ -290,6 +315,21 @@
 				AE9D02D717A09FB600306CEC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEE8D3961821A56E00F0C52C /* GALibrary */ = {
+			isa = PBXGroup;
+			children = (
+				AEE8D39F1821B5A700F0C52C /* libGoogleAnalyticsServices.a */,
+				AEE8D3971821A56E00F0C52C /* GAI.h */,
+				AEE8D3981821A56E00F0C52C /* GAIDictionaryBuilder.h */,
+				AEE8D3991821A56E00F0C52C /* GAIFields.h */,
+				AEE8D39A1821A56E00F0C52C /* GAILogger.h */,
+				AEE8D39B1821A56E00F0C52C /* GAITrackedViewController.h */,
+				AEE8D39C1821A56E00F0C52C /* GAITracker.h */,
+				AEE8D39D1821A56E00F0C52C /* libGoogleAnalytics_debug.a */,
+			);
+			path = GALibrary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -558,8 +598,9 @@
 				INFOPLIST_FILE = "loopback-ios-multi-model/loopback-ios-multi-model-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/bson/build/Release\"",
-					"\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/kerberos/build/Release\"",
+					"\\\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/bson/build/Release\\\"",
+					"\\\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/kerberos/build/Release\\\"",
+					"/Users/mattschmulen/nodelife/strongloop/strongloop-community/loopback-mobile-getting-started/loopback-ios-app/loopback-ios-multi-model/GALibrary",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -578,8 +619,9 @@
 				INFOPLIST_FILE = "loopback-ios-multi-model/loopback-ios-multi-model-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/bson/build/Release\"",
-					"\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/kerberos/build/Release\"",
+					"\\\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/bson/build/Release\\\"",
+					"\\\"$(SRCROOT)/loopback-nodejs-server/node_modules/asteroid-connector-mongodb/node_modules/mongodb/node_modules/kerberos/build/Release\\\"",
+					"/Users/mattschmulen/nodelife/strongloop/strongloop-community/loopback-mobile-getting-started/loopback-ios-app/loopback-ios-multi-model/GALibrary",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

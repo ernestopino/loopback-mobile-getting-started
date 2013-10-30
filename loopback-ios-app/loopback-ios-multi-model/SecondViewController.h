@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <LoopBack/LoopBack.h>
+#import "GAITrackedViewController.h"
 
-@interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SecondViewController : GAITrackedViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

@@ -111,6 +111,12 @@
     [AppDelegate showGuideMessage: @"Tab 'Three' Step3"];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.screenName = @"ThirdViewController";
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
