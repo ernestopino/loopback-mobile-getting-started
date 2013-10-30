@@ -137,7 +137,7 @@ public class Fragment2 extends Fragment {
     private void create() {
         CarPrototype prototype = getPrototype();
         Car model = prototype.createModel(null);
-        model.setName("MP5 Milspec");
+        model.setName("Telsa Model S");
         model.setMilage(9);
         model.save(new Model.Callback() {
             
@@ -170,7 +170,7 @@ public class Fragment2 extends Fragment {
                             R.string.message_failure_find);
                 }
                 else {
-                    model.setMilage(22);
+                    model.setMilage(7777);
                     model.save(new Model.Callback() {
                         
                         @Override

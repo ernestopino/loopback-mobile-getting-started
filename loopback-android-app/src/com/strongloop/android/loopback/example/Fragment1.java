@@ -91,7 +91,7 @@ public class Fragment1 extends Fragment {
     }
     
     private void refresh() {
-        // Equivalent http JSON endpoint request: http://localhost:3000/weapons
+        // Equivalent http JSON endpoint request: http://localhost:3000/products
         ModelPrototype<Model> prototype = getPrototype();
         prototype.findAll(new ModelPrototype.FindAllCallback<Model>() {
 
@@ -110,7 +110,7 @@ public class Fragment1 extends Fragment {
     private void create() {
         ModelPrototype<Model> prototype = getPrototype();
         Model model = prototype.createModel(
-                ImmutableMap.of("name", "New Weapon", "inventory", 99));
+                ImmutableMap.of("name", "New Product", "inventory", 99, "price",13.34, "units-sold", 44 ));
         model.save(new Model.Callback() {
             
             @Override
@@ -134,7 +134,7 @@ public class Fragment1 extends Fragment {
             public void onError(Throwable t) {
                 MainActivity.showGuideMessage(getActivity(), t);
             }
-
+            
             @Override
             public void onSuccess(Model model) {
                 if (model == null) {
@@ -142,7 +142,7 @@ public class Fragment1 extends Fragment {
                             R.string.message_failure_find);
                 }
                 else {
-                    model.put("inventory", 22);
+                    model.put("inventory", 66);
                     model.save(new Model.Callback() {
                         
                         @Override
@@ -164,7 +164,7 @@ public class Fragment1 extends Fragment {
     private void delete() {
         ModelPrototype<Model> prototype = getPrototype();
         prototype.findById(2, new ModelPrototype.FindCallback<Model>() {
-
+        	
             @Override
             public void onError(Throwable t) {
                 MainActivity.showGuideMessage(getActivity(), t);

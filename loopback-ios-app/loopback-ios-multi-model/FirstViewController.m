@@ -142,7 +142,7 @@
 
     //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
-
+    
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
@@ -184,7 +184,7 @@
     
     //Get a local representation of the 'products' model type
     LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
-
+    
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];

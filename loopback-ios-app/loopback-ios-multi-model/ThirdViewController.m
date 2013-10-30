@@ -17,7 +17,7 @@
 @implementation ThirdViewController
 
 // Find and Filter
-- (void) findProductLowestInventory {
+- (void) findProductGreatestInventory {
     
     //Find the Product with the Product With the Lowest Inventory
     
@@ -89,7 +89,7 @@
 }//end findProductHighest
 
 - (IBAction)actionMethod1:(id)sender {
-    [self findProductLowestInventory];
+    [self findProductGreatestInventory];
 }
 
 - (IBAction)actionMethod2:(id)sender {

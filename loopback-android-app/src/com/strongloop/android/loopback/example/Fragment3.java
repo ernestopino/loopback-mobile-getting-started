@@ -28,7 +28,6 @@ public class Fragment3 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState) {
         
-    
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment3, 
                 container, false);
         
@@ -42,7 +41,7 @@ public class Fragment3 extends Fragment {
             
             @Override
             public void onClick(View v) {
-                findLowestAudibleRange();
+                findGreatestInventory();
             }
         });
         
@@ -51,7 +50,7 @@ public class Fragment3 extends Fragment {
             
             @Override
             public void onClick(View v) {
-                findHighestNumberOfRounds();
+                findLowestPrice();
             }
         });
         
@@ -80,7 +79,7 @@ public class Fragment3 extends Fragment {
         return prototype;
     }
     
-    private void findLowestAudibleRange() {
+    private void findGreatestInventory() {
         ModelPrototype<Model> prototype = getPrototype();
         prototype.invokeStaticMethod("findOne",
                 ImmutableMap.of("orderBy", "inventory ASC"),
@@ -104,8 +103,9 @@ public class Fragment3 extends Fragment {
             }
         });
     }
-
-    private void findHighestNumberOfRounds() {
+    
+    //Lowest Price
+    private void findLowestPrice() {
         ModelPrototype<Model> prototype = getPrototype();
         prototype.invokeStaticMethod("findOne",
                 ImmutableMap.of("orderBy", "price DESC"),

@@ -13,23 +13,23 @@
     <string name="circle4">❹</string>
     
     <string name="welcome">Welcome</string>
-    <string name="welcome_intro1">Each tab in this app will guide you through what you need to get started using the LoopBack Node for your Mobile App.</string>
+    <string name="welcome_intro1">This app will guide you through what you need to get started using the LoopBack Node.js mobile backend.</string>
     <string name="welcome_intro2">Just follow the tips and uncomment the code for each feature.</string>
     
     <string name="start">Start with the next Tab</string>
     
     <string name="step1_title">Getting your CRUD together</string>
-    <string name="step2_title">Become a Model Citizen</string>
-    <string name="step3_title">Find and Filter</string>
-    <string name="step4_title">Crush Server Latency</string>
+    <string name="step2_title">Become a model citizen</string>
+    <string name="step3_title">Find and filter for free</string>
+    <string name="step4_title">Customize your API</string>
     
     <string name="Create">Create</string>
     <string name="Refresh">Refresh</string>
     <string name="Update">Update</string>
     <string name="Delete">Delete</string>
     
-    <string name="custom_method_1">Lowest Audible Range</string>
-    <string name="custom_method_2">Highest # of Rounds</string>
+    <string name="custom_method_1">Greatest Inventory</string>
+    <string name="custom_method_2">Lowest Price</string>
     
     <string name="message_success_init">Press \'Refresh\' to load the local ListView.</string>
     <string name="message_success_create">Congratulations, you created a model instance on the server. Press \'Refresh\' to update the local ListView.</string>
