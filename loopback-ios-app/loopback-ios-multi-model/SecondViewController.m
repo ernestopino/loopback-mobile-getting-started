@@ -79,7 +79,7 @@
 - ( void ) getModels
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    // The block below gets all the 'car' models from the server
     // ++++++++++++++++++++++++++++++++++++
     
     void (^loadFailBlock)(NSError *) = ^(NSError *error) {
@@ -106,7 +106,7 @@
 - ( void ) createNewModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    // The block below to creates a new 'car' model on the server
     // ++++++++++++++++++++++++++++++++++++
     
     NSLog( @"CreateNew Model and push to the server");
@@ -139,9 +139,8 @@
 - ( void ) updateExistingModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    //  The block below first finds the model with id = 2 and then updates the 'milage' parameter on the server
     // ++++++++++++++++++++++++++++++++++++
-    
     
     // Define the find error functional block
     void (^findErrorBlock)(NSError *) = ^(NSError *error) {
@@ -182,7 +181,7 @@
 - ( void ) deleteExistingModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    //  The block below first finds the model with id = 2 and then deletes the model from the server
     // ++++++++++++++++++++++++++++++++++++
     
     // Define the find error functional block

@@ -46,7 +46,7 @@
 - ( void ) getModels
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    // The block below gets all the 'product' models from the server
     // ++++++++++++++++++++++++++++++++++++
     
     // Define the load success block for the LBModelPrototype allWithSuccess message
@@ -79,7 +79,7 @@
 - ( void ) createNewModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    // The block below to creates a new 'product' model on the server
     // ++++++++++++++++++++++++++++++++++++
     
     //Get a local representation of the 'products' model type
@@ -112,7 +112,7 @@
 - ( void ) updateExistingModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    //  The block below first finds the model with id = 2 and then updates the 'inventory' parameter on the server
     // ++++++++++++++++++++++++++++++++++++
     
     // Define your success functional block
@@ -155,7 +155,7 @@
 - ( void ) deleteExistingModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    //  The block below first finds the model with id = 2 and then deletes the model from the server
     // ++++++++++++++++++++++++++++++++++++
     
     // Define your success functional block
@@ -254,27 +254,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-/*
-- (void) initializeServerWithData
-{
-    // Define the load error functional block
-    void (^saveNewErrorBlock)(NSError *) = ^(NSError *error) {
-        NSLog( @"Error on Save %@", error.description);
-    };
-    
-    // Define the load success block for saveNewSuccessBlock message
-    void (^saveNewSuccessBlock)() = ^() {
-    };
-    
-    LBModelPrototype *prototype = [  [AppDelegate adapter]  prototypeWithName:@"products"];
-    //Persist the newly created Model to the LoopBack node server
-    [ [prototype modelWithDictionary:@{ @"name": @"Product A", @"inventory" : @11 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    [ [prototype modelWithDictionary:@{ @"name": @"Product B", @"inventory" : @22 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    [ [prototype modelWithDictionary:@{ @"name": @"Product C", @"inventory" : @33 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    
-}
-*/
 
 @end

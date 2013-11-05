@@ -27,6 +27,12 @@
 
 -( void) customMethod1 {
     
+    // ++++++++++++++++++++++++++++++++++++
+    // The block below calls a custom API method that has been added to the 'product' model
+    // it's the equivelent to the HTTP REST Call:
+    //  http://localhost:3000/products/taxInfo
+    // ++++++++++++++++++++++++++++++++++++
+    
     // Define the load error functional block
     void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);
@@ -81,8 +87,11 @@
 }//end CustomMethod2
 
 - (void)customMethod3 {
+    
     // ++++++++++++++++++++++++++++++++++++
-    // Uncomment the comment block below to call a custom method on the server
+    // The block below calls a custom API method that has been added to the 'cars' model
+    // it's the equivelent to the HTTP REST Call:
+    //  http://localhost:3000/cars/custommethod3?arg1=yack&arg2=123
     // ++++++++++++++++++++++++++++++++++++
     
     // Define the load error functional block

@@ -19,10 +19,11 @@
 // Find and Filter
 - (void) findProductGreatestInventory {
     
-    //Find the Product with the Product With the Lowest Inventory
-    
-    // HTTP REST Call:
+    // ++++++++++++++++++++++++++++++++++++
+    // The block below finds the Product with the Product With the Lowest Inventory
+    // it's the equivelent to the HTTP REST Call:
     // http://localhost:3000/products?filter[order]=inventory%20ASC&filter[limit]=1
+    // ++++++++++++++++++++++++++++++++++++
     
     void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);
@@ -55,10 +56,12 @@
 
 - (void) findProductLowestPrice {
     
-    //Find the Product with the Product With the Lowest Inventory
-    
-    // HTTP REST Call:
+    // ++++++++++++++++++++++++++++++++++++
+    // The block below finds the product with the Lowest Inventory
+    // it's the equivelent to the HTTP REST Call:
     // http://localhost:3000/products?filter[order]=inventory%20ASC&filter[limit]=1
+    // ++++++++++++++++++++++++++++++++++++
+    
     
     void (^staticMethodErrorBlock)(NSError *) = ^(NSError *error) {
         NSLog( @"Error %@", error.description);

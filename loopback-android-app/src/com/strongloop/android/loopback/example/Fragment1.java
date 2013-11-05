@@ -94,7 +94,7 @@ public class Fragment1 extends Fragment {
         // Equivalent http JSON endpoint request: http://localhost:3000/products
         ModelPrototype<Model> prototype = getPrototype();
         prototype.findAll(new ModelPrototype.FindAllCallback<Model>() {
-
+        	
             @Override
             public void onSuccess(List<Model> models) {
                 list.setAdapter(new ListAdapter(getActivity(), models));
