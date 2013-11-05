@@ -44,10 +44,10 @@ StongLoop Suite and the LoopBack framework provides a complete open Node backend
 ##### Getting Started with the Guide App
 The easiest way to get started is to start with the LoopBack iOS 'Guide Application'. The pre-build Guide Application already has the LoopBack SDK .framework included. Each Tab in the application will Guide you through the remoting features available to Mobile Applications.
 
-<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/01.png" alt="tab Home" height="209" width="120">
-<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/02.png" alt="tab 1" height="209" width="120">
-<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/03.png" alt="tab 2" height="209" width="120">
-<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/05.png" alt="tab 3" height="209" width="120">
+<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/iphone-01.png" alt="tab Home" height="209" width="120">
+<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/iphone-02.png" alt="tab 1" height="209" width="120">
+<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/iphone-03.png" alt="tab 2" height="209" width="120">
+<img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/iphone-05.png" alt="tab 3" height="209" width="120">
 
 
 5. Open the Xcode Project and CMD + R Run your application
