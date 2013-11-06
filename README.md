@@ -1,6 +1,12 @@
-
-
 #LoopBack Mobile Getting Started
+
+Loopback is an open source backend built on Node that makes it easy to connect your mobile app to enterprise and cloud data.
+
+[LoopBack iOS SDK](http://strongloop.com/mobile/ios/)
+
+## Introduction
+
+StongLoop Suite and the LoopBack framework provides a complete open Node backend solution for creating your own private Mobile Backend as a Service/Solution ( MBaaS ) for your mobile initiatives. The goal of LoopBack is to make it easy and fast for you to 'stand up' your mobile API middle tier on a platform that you can easily extend, deploy and maintain.
 
 
 ## Getting Started 
@@ -18,16 +24,15 @@ $cd loopback-nodejs-server
 $slnode run app.js
 ```
 
-4. Open the iOS Guide application, the Xcode Project is located at loopback-ios-multi-model/loopback-ios-multi-model.xcodeproj
+4. Open the Getting Started Application
+	- iOS XCode Project is located at loopback-mobile-getting-started/loopback-ios-app/loopback-ios-multi-model.xcodeproj 
+	- Android Eclipse ADT project is located at loopback-mobile-getting-started/loopback-android-app
 
-5. Run the Guide Application iOS Application CMD-R
+5. Run the Guide Application
+	- iOS Application ⌘+r
+	- Android ⌘+Shift+F11
 
-6. Follow the instructions provided by the App , start by pressing the "Start with the next Tab" button
-
-
-## Introduction
-
-StongLoop Suite and the LoopBack framework provides a complete open Node backend solution for creating your own private Mobile Backend as a Service/Solution ( MBaaS ) for your mobile initiatives. The goal of LoopBack is to make it easy and fast for you to 'stand up' your mobile API middle tier on a platform that you can easily extend, deploy and maintain.
+6. Each tab in the application show's a feature of the Native SDK and the LoopBack mobile API tier.  Start by pressing the "Start with the next Tab" button
 
 
 ## Native iOS Development with LoopBack
@@ -41,8 +46,8 @@ StongLoop Suite and the LoopBack framework provides a complete open Node backend
 
  * Supported [StrongLoop Suite](http://daringfireball.net/projects/markdown/) host machine or Cloud environment.  [Supported Environments](http://strongloop.com/products) 
 
-##### Getting Started with the Guide App
-The easiest way to get started is to start with the LoopBack iOS 'Guide Application'. The pre-build Guide Application already has the LoopBack SDK .framework included. Each Tab in the application will Guide you through the remoting features available to Mobile Applications.
+##### Getting Started with this App
+The easiest way to get started is to start with the LoopBack iOS 'Getting Started Application'. The application already has the LoopBack SDK ```.framework``` included. Each Tab in the application will show you how a specific remoting features available to Mobile Applications.
 
 <img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/iphone-01.png" alt="tab Home" height="209" width="120">
 <img src="https://raw.github.com/strongloop-community/loopback-mobile-getting-started/master/Screenshots/iphone-02.png" alt="tab 1" height="209" width="120">
