@@ -246,7 +246,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.screenName = @"FirstViewController";
 }
 
 - (void)didReceiveMemoryWarning

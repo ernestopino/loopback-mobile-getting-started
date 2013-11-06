@@ -8,8 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <LoopBack/LoopBack.h>
-#import "GAITrackedViewController.h"
 
-@interface ThirdViewController : GAITrackedViewController
+@interface ThirdViewController : UIViewController
 
 @end

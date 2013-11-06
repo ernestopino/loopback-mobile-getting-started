@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GAI.h"
+//#import "GAI.h"
 
 @interface AppDelegate ()
 @end
@@ -83,10 +83,10 @@ static NSString *const kAllowTracking = @"allowTracking";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    [GAI sharedInstance].dispatchInterval = 20;
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    [[GAI sharedInstance] trackerWithTrackingId: kTrackingId];
+    //[GAI sharedInstance].trackUncaughtExceptions = YES;
+    //[GAI sharedInstance].dispatchInterval = 20;
+    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    //[[GAI sharedInstance] trackerWithTrackingId: kTrackingId];
     
     return YES;
 }
@@ -110,7 +110,7 @@ static NSString *const kAllowTracking = @"allowTracking";
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    [GAI sharedInstance].optOut = ![[NSUserDefaults standardUserDefaults] boolForKey:kAllowTracking];
+    //[GAI sharedInstance].optOut = ![[NSUserDefaults standardUserDefaults] boolForKey:kAllowTracking];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

@@ -59,11 +59,8 @@
 		AEC5816A17BD300D00DDA22C /* num-two@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816217BD300C00DDA22C /* num-two@2x.png */; };
 		AEC5816D17BD3E3600DDA22C /* wip.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816B17BD3E3600DDA22C /* wip.png */; };
 		AEC5816E17BD3E3600DDA22C /* wip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816C17BD3E3600DDA22C /* wip@2x.png */; };
-		AEE8D39E1821A56E00F0C52C /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D39D1821A56E00F0C52C /* libGoogleAnalytics_debug.a */; };
-		AEE8D3A01821B5A700F0C52C /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D39F1821B5A700F0C52C /* libGoogleAnalyticsServices.a */; };
 		AEE8D3A21821B5C300F0C52C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */; };
 		AEE8D3A41821B5D300F0C52C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A31821B5D300F0C52C /* CoreData.framework */; };
-		AEE8D3A61821B5E800F0C52C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A51821B5E800F0C52C /* libz.dylib */; };
 		B3EE1C0117CE9D15001ECC06 /* LoopBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */; };
 		B3EE1C0317CFE6DC001ECC06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
@@ -161,14 +158,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEE8D3A61821B5E800F0C52C /* libz.dylib in Frameworks */,
 				AEE8D3A41821B5D300F0C52C /* CoreData.framework in Frameworks */,
 				AEE8D3A21821B5C300F0C52C /* SystemConfiguration.framework in Frameworks */,
 				AE9D02A017A09FB500306CEC /* UIKit.framework in Frameworks */,
 				AE9D02A217A09FB500306CEC /* Foundation.framework in Frameworks */,
 				AE9D02A417A09FB500306CEC /* CoreGraphics.framework in Frameworks */,
-				AEE8D3A01821B5A700F0C52C /* libGoogleAnalyticsServices.a in Frameworks */,
-				AEE8D39E1821A56E00F0C52C /* libGoogleAnalytics_debug.a in Frameworks */,
 				B3EE1C0317CFE6DC001ECC06 /* CoreLocation.framework in Frameworks */,
 				B3EE1C0117CE9D15001ECC06 /* LoopBack.framework in Frameworks */,
 			);

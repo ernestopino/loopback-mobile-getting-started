@@ -139,7 +139,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.screenName = @"FourthViewController";
 }
 
 - (void)didReceiveMemoryWarning
