@@ -76,8 +76,7 @@ public class Fragment1 extends Fragment {
     
     public RestAdapter getAdapter() {
         if (adapter == null) {
-            // NOTE: "10.0.2.2" is the "localhost" of the Android emulator's
-            // host computer.
+            // NOTE: "10.0.2.2" is the "localhost" of the Android emulator's host computer.
             adapter = new RestAdapter(getActivity(), "http://10.0.2.2:3000");
         }
         return adapter;

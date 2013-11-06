@@ -78,13 +78,15 @@ static LBRESTAdapter * _adapter = nil;
     [ [prototype modelWithDictionary:@{ @"name": @"Hoda Accord", @"milage" : @400 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
 }
 
+static NSString *const kTrackingId = @"UA-41394697-4";
+static NSString *const kAllowTracking = @"allowTracking";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     [GAI sharedInstance].dispatchInterval = 20;
-    //[[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-41394697-4"];
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] trackerWithTrackingId: kTrackingId];
     
     return YES;
 }
@@ -109,7 +111,6 @@ static LBRESTAdapter * _adapter = nil;
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     [GAI sharedInstance].optOut = ![[NSUserDefaults standardUserDefaults] boolForKey:kAllowTracking];
-    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -117,32 +118,30 @@ static LBRESTAdapter * _adapter = nil;
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-static NSString *const kTrackingId = @"UA-TRACKING-ID";
-static NSString *const kAllowTracking = @"allowTracking";
 
 + (void) showGuideMessage : ( NSString *) message
 {
     NSMutableDictionary *_guide = [[NSMutableDictionary alloc] init];
-
+    
     [_guide setObject:@"Welcome to the StrongLoop ! node.js for Mobile Developers 'hello Node' App" forKey:@"Welcome"];
     
     //Tab1
-    [_guide setObject:@"Get Started by removing the comment blocks in 'FirstViewController.m' to Create Update and Delete models from the node server" forKey:@"Tab 'One' Step1"];
+    [_guide setObject:@"Get Started by checking out the code blocks in 'FirstViewController.m' to Create Read Update and Delete models from the node server" forKey:@"Tab 'One' Step1"];
     
     // Step 1: uncomment reminders
-    [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) getModels' in 'FirstViewController.m' ?" forKey:@"Step1 uncomment getModels"];
+    [_guide setObject:@"No Models found from '- ( void ) getModels' in 'FirstViewController.m' ?" forKey:@"Step1 uncomment getModels"];
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) createNewModel' in 'FirstViewController.m' " forKey:@"Step1 uncomment createNewModel"];
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) updateExistingModel' in 'FirstViewController.m' " forKey:@"Step1 uncomment updateExistingModel"];
     [_guide setObject:@"Dont forget to remove the //* comment blocks in '- ( void ) deleteExistingModel' in 'FirstViewController.m' " forKey:@"Step1 uncomment deleteExistingModel"];
     
     //Success Messages
-    [_guide setObject:@"You created a model instance on the server, press 'Refresh' to update the local Table View " forKey:@"Tab 'One' CreateSuccess"];
-    [_guide setObject:@"You updated a model instance on the server, press 'Refresh' to update the local Table View " forKey:@"Tab 'One' UpdateSuccess"];
-    [_guide setObject:@"You deleted a model instance on the server, press 'Refresh' to update the local Table View " forKey:@"Tab 'One' DeleteSuccess"];
+    [_guide setObject:@"You created a model instance on the server, you should see the new modle in the Table View " forKey:@"Tab 'One' CreateSuccess"];
+    [_guide setObject:@"You updated a model instance on the server, you should see the updated modle in the Table View " forKey:@"Tab 'One' UpdateSuccess"];
+    [_guide setObject:@"You deleted a model instance on the server, the model has been removed on the server and the local Table View " forKey:@"Tab 'One' DeleteSuccess"];
     
     
     //Tab2
-    [_guide setObject:@"For this step uncomment the first comment block in app.js to publish a new set of models" forKey:@"Tab 'Two' Step2"];
+    [_guide setObject:@"check out the code blocks in 'SecondViewController.m' " forKey:@"Tab 'Two' Step2"];
     
     //Step 2 : uncomment reminders
     [_guide setObject:@"No Models found, did you uncomment the commented code in '- ( void ) getModels' in 'SecondViewController.m' ?" forKey:@"Step2 uncomment getModels"];
@@ -166,8 +165,12 @@ static NSString *const kAllowTracking = @"allowTracking";
     [_guide setObject:@"Press The Delete Button to delete a record on the server " forKey:@"Tab 'One' Delete"];
     [_guide setObject:@"Looking Good! Go to Tab2 'Second' and lets create a custom Model" forKey:@"Finished Tab1"];
     
-    
     [_guide setObject:@"Does'nt look like your server is running. From the node-server folder start the server with \n'slc run app.js'\n and try again " forKey:@"No Server Found"];
+    
+    
+    
+    
+    [_guide setObject:@"Wow thank's for checking out our 'getting started' app!" forKey:@"Easter Egg"];
     
     
     NSLog(@"Message: %@", [   _guide objectForKey:message]);
@@ -178,7 +181,7 @@ static NSString *const kAllowTracking = @"allowTracking";
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
-     
+    
 }//end showHelperMessage
 
 
