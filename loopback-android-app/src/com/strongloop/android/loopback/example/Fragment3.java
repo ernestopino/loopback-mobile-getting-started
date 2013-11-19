@@ -20,7 +20,7 @@ import com.strongloop.android.remoting.adapters.Adapter;
 import com.strongloop.android.remoting.adapters.RestContractItem;
 
 public class Fragment3 extends Fragment {
-
+	
     private TextView result1;
     private TextView result2;
     
@@ -62,8 +62,7 @@ public class Fragment3 extends Fragment {
     
     public RestAdapter getAdapter() {
         if (adapter == null) {
-            // NOTE: "10.0.2.2" is the "localhost" of the Android emulator's 
-            // host computer.
+            // NOTE: "10.0.2.2" is the "localhost" of the Android emulator's host computer.
             adapter = new RestAdapter(getActivity(), "http://10.0.2.2:3000");
             adapter.getContract().addItem(
                 new RestContractItem("/products", "GET"),
