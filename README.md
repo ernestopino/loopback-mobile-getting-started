@@ -223,3 +223,7 @@ Now that you have the basics for standing up your own private MBaaS that you can
 Find More complete documentation and interesting Neologism's on the StrongLoop Suite and the LoopBack framework here [LoopBack Documentation](http://localhost:3000/products) and [ SDK Documentation ](http://localhost:3000/products).
 
 ---
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/eeca9410dc349b48bdbe1e44e6122b36 "githalytics.com")](http://githalytics.com/strongloop-community/loopback-mobile-getting-started)
+
+
