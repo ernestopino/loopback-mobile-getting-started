@@ -25,7 +25,7 @@ public class Fragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
             Bundle savedInstanceState) {
-
+    	
         ViewGroup rootView = (ViewGroup)inflater.inflate(R.layout.fragment2, 
                 container, false);
         
@@ -72,7 +72,7 @@ public class Fragment2 extends Fragment {
     
     public static class Car extends Model {
         private String name;
-        private int milage;
+        private int inventory;
         
         public String getName() {
             return name;
@@ -83,18 +83,18 @@ public class Fragment2 extends Fragment {
         }
         
         public int getMilage() {
-            return milage;
+            return inventory;
         }
         
         public void setMilage(int caliber) {
-            this.milage = caliber;
+            this.inventory = caliber;
         }
     }
     
     public static class CarPrototype extends ModelPrototype<Car> {
         
         public CarPrototype() {
-            super("car", Car.class);  //"car" , "cars"
+            super("product", Car.class);
         }
     }
     
@@ -104,7 +104,8 @@ public class Fragment2 extends Fragment {
     public RestAdapter getAdapter() {
         if (adapter == null) {
             // NOTE: "10.0.2.2" is the "localhost" of the Android emulator's host computer.
-            adapter = new RestAdapter(getActivity(), "http://10.0.2.2:3000");
+            // adapter = new RestAdapter(getActivity(), "http://10.0.2.2:3000");
+        	adapter = new RestAdapter(getActivity(), "http://33.33.33.10:3000/api");
         }
         return adapter;
     }
