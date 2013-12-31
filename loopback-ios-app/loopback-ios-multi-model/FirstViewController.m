@@ -64,7 +64,7 @@
     };//end selfFailblock
     
     //Get a local representation of the 'products' model type
-    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"products"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     // Invoke the allWithSuccess message for the 'products' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/products
@@ -83,7 +83,7 @@
     // ++++++++++++++++++++++++++++++++++++
     
     //Get a local representation of the 'products' model type
-    LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     //create new LBModel of type
     LBModel *model = [prototype modelWithDictionary:@{ @"name": @"New Product", @"inventory" : @99, @"price" :@13.34 , @"units-sold" : @44 }];
@@ -139,13 +139,13 @@
         NSLog( @"Error No model found with ID %@", error.description);
         [AppDelegate showGuideMessage: @"No Server Found"];
     };
-
+    
     //Get a local representation of the 'products' model type
-    LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
-    [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
+    [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
     
@@ -183,11 +183,11 @@
     };
     
     //Get a local representation of the 'products' model type
-    LBModelPrototype *prototype = [ [AppDelegate adapter] prototypeWithName:@"products"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
-    [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
+    [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
     [AppDelegate showGuideMessage: @"Step1 uncomment deleteExistingModel"];

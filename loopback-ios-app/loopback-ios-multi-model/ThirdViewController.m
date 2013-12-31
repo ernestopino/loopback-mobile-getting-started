@@ -41,16 +41,14 @@
         
     };//end staticMethodSuccessBlock
     
-    LBModelPrototype *objectProto = [ [AppDelegate adapter] prototypeWithName:@"products"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     [[ [AppDelegate adapter] contract] addItem:[SLRESTContractItem itemWithPattern:@"/products" verb:@"GET"] forMethod:@"products.filter"];
     
+    [prototype invokeStaticMethod:@"filter" parameters:@{ @"filter[order]":@"inventory ASC",@"filter[limit]":@1} success:staticMethodSuccessBlock failure:staticMethodErrorBlock];
+    
     //Product with lowest inventory
     // http://localhost:3000/products?filter[order]=inventory%20ASC&filter[limit]=1': The highest inventory products
-    [objectProto invokeStaticMethod:@"filter" parameters:@{ @"filter[order]":@"inventory ASC",@"filter[limit]":@1} success:staticMethodSuccessBlock failure:staticMethodErrorBlock];
-    
-    // Docs reference:
-    // http://docs.strongloop.com/loopback/#example-request-4
     
 }//end findPoductLowestInventory
 
@@ -78,16 +76,14 @@
                                   [model objectForKeyedSubscript:@"price"] ];
     };//end staticMethodSuccessBlock
     
-    LBModelPrototype *objectProto = [ [AppDelegate adapter] prototypeWithName:@"products"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     [[ [AppDelegate adapter] contract] addItem:[SLRESTContractItem itemWithPattern:@"/products" verb:@"GET"] forMethod:@"products.filter"];
     
     //Product with lowest inventory
     // http://localhost:3000/products?filter[order]=inventory%20ASC&filter[limit]=1': The highest inventory products
-    [objectProto invokeStaticMethod:@"filter" parameters:@{ @"filter[order]":@"price ASC",@"filter[limit]":@1} success:staticMethodSuccessBlock failure:staticMethodErrorBlock];
     
-    // Docs reference:
-    // http://docs.strongloop.com/loopback/#example-request-4
+    [prototype invokeStaticMethod:@"filter" parameters:@{ @"filter[order]":@"price ASC",@"filter[limit]":@1} success:staticMethodSuccessBlock failure:staticMethodErrorBlock];
     
 }//end findProductHighest
 

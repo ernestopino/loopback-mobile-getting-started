@@ -36,12 +36,12 @@
 @implementation Car
 @end
 
-@interface CarPrototype : LBModelPrototype
+@interface CarPrototype : LBModelRepository
 + (instancetype)prototype;
 @end
 
 @implementation CarPrototype
-+ (instancetype)prototype { return [self prototypeWithName:@"cars"]; }
++ (instancetype)prototype { return [self repositoryWithClassName:@"cars"]; }
 @end
 
 
@@ -59,7 +59,7 @@
 - (CarPrototype *) prototypeObjectReference
 {
     if (!_prototypeObjectReference)
-        _prototypeObjectReference = (CarPrototype *)[ [AppDelegate adapter]  prototypeWithClass:[CarPrototype class]];
+        _prototypeObjectReference = (CarPrototype *)[ [AppDelegate adapter]  repositoryWithClass:[CarPrototype class]];
     return _prototypeObjectReference;
 }
 
@@ -86,7 +86,7 @@
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
     
-    LBModelPrototype *objectB = [ [AppDelegate adapter] prototypeWithName:@"car"];
+    LBModelRepository *objectB = [ [AppDelegate adapter] repositoryWithModelName:@"car"];
     
     // Invoke the allWithSuccess message for the 'ammo' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/car
@@ -115,7 +115,7 @@
         [AppDelegate showGuideMessage: @"No Server Found"];
     };
     
-    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"car"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"car"];
     
     Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{}];
     modelInstance.name = @"Telsa Model S";
@@ -167,11 +167,11 @@
     };
     
     //Get a local representation of the 'cars' model type
-    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"cars"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
-    [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
+    [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
     [AppDelegate showGuideMessage: @"Step2 uncomment updateExistingModel"];
@@ -197,6 +197,7 @@
         void (^removeErrorBlock)(NSError *) = ^(NSError *error) {
             NSLog( @"Error on Save %@", error.description);
         };
+        
         void (^removeSuccessBlock)() = ^() {
             [AppDelegate showGuideMessage: @"Tab 'One' DeleteSuccess"];
             
@@ -209,11 +210,11 @@
     };
     
     //Get a local representation of the 'car' model type
-    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"cars"];
     
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
-    [prototype findWithId:@2 success:findSuccessBlock failure:findErrorBlock ];
+    [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
     [AppDelegate showGuideMessage: @"Step2 uncomment deleteExistingModel"];
@@ -258,9 +259,7 @@
         //cell.textLabel.text = model[@"name"]; //[model objectForKeyedSubscript:@"name"];
         //cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", modelInstance.name, [ modelInstance.milage stringValue] ];
         
-        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@",
-                               [model objectForKeyedSubscript:@"name"] ,
-                               (int)[model objectForKeyedSubscript:@"milage"] ];
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [model objectForKeyedSubscript:@"name"], (int)[model objectForKeyedSubscript:@"milage"] ];
         
     }
     return cell;

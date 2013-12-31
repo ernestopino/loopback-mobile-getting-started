@@ -41,5 +41,10 @@
     "properties": {},
     "public": true,
     "dataSource": "db"
+  },
+  "car": {
+    "properties": {},
+    "public": true,
+    "dataSource": "db"
   }
 }

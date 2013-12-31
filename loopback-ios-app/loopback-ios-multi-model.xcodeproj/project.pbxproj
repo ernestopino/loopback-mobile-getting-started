@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE44064D1864CEDF00FAF9E4 /* LoopBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE44064C1864CEDF00FAF9E4 /* LoopBack.framework */; };
 		AE90C00E181F387A00A4A1F4 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C00C181F387A00A4A1F4 /* home.png */; };
 		AE90C00F181F387A00A4A1F4 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C00D181F387A00A4A1F4 /* home@2x.png */; };
 		AE90C01B181F3E2200A4A1F4 /* Icon-app-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = AE90C011181F3E2200A4A1F4 /* Icon-app-ipad.png */; };
@@ -61,7 +62,6 @@
 		AEC5816E17BD3E3600DDA22C /* wip@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AEC5816C17BD3E3600DDA22C /* wip@2x.png */; };
 		AEE8D3A21821B5C300F0C52C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */; };
 		AEE8D3A41821B5D300F0C52C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEE8D3A31821B5D300F0C52C /* CoreData.framework */; };
-		B3EE1C0117CE9D15001ECC06 /* LoopBack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */; };
 		B3EE1C0317CFE6DC001ECC06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE44064C1864CEDF00FAF9E4 /* LoopBack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoopBack.framework; sourceTree = "<group>"; };
 		AE90C00C181F387A00A4A1F4 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
 		AE90C00D181F387A00A4A1F4 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
 		AE90C011181F3E2200A4A1F4 /* Icon-app-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-app-ipad.png"; sourceTree = "<group>"; };
@@ -149,7 +150,6 @@
 		AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		AEE8D3A31821B5D300F0C52C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		AEE8D3A51821B5E800F0C52C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LoopBack.framework; sourceTree = "<group>"; };
 		B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -160,11 +160,11 @@
 			files = (
 				AEE8D3A41821B5D300F0C52C /* CoreData.framework in Frameworks */,
 				AEE8D3A21821B5C300F0C52C /* SystemConfiguration.framework in Frameworks */,
+				AE44064D1864CEDF00FAF9E4 /* LoopBack.framework in Frameworks */,
 				AE9D02A017A09FB500306CEC /* UIKit.framework in Frameworks */,
 				AE9D02A217A09FB500306CEC /* Foundation.framework in Frameworks */,
 				AE9D02A417A09FB500306CEC /* CoreGraphics.framework in Frameworks */,
 				B3EE1C0317CFE6DC001ECC06 /* CoreLocation.framework in Frameworks */,
-				B3EE1C0117CE9D15001ECC06 /* LoopBack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,11 +220,11 @@
 		AE9D029E17A09FB500306CEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AE44064C1864CEDF00FAF9E4 /* LoopBack.framework */,
 				AEE8D3A51821B5E800F0C52C /* libz.dylib */,
 				AEE8D3A31821B5D300F0C52C /* CoreData.framework */,
 				AEE8D3A11821B5C300F0C52C /* SystemConfiguration.framework */,
 				B3EE1C0217CFE6DC001ECC06 /* CoreLocation.framework */,
-				B3EE1C0017CE9D15001ECC06 /* LoopBack.framework */,
 				AE9D029F17A09FB500306CEC /* UIKit.framework */,
 				AE9D02A117A09FB500306CEC /* Foundation.framework */,
 				AE9D02A317A09FB500306CEC /* CoreGraphics.framework */,
@@ -585,7 +585,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"/Users/mattschmulen/life-strongloop/trees/strongloop-community/loopback-mobile-getting-started/loopback-ios-app",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "loopback-ios-multi-model/loopback-ios-multi-model-Prefix.pch";
@@ -606,7 +607,8 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)\"",
+					"$(SRCROOT)",
+					"/Users/mattschmulen/life-strongloop/trees/strongloop-community/loopback-mobile-getting-started/loopback-ios-app",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "loopback-ios-multi-model/loopback-ios-multi-model-Prefix.pch";

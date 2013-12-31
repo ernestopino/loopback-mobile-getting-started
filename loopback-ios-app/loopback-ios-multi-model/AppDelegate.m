@@ -19,7 +19,7 @@ static LBRESTAdapter * _adapter = nil;
 + (LBRESTAdapter *) adapter
 {
     if( !_adapter)
-        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://localhost:3000"]];
+        _adapter = [LBRESTAdapter adapterWithURL:[NSURL URLWithString:@"http://localhost:3000/api"]];
     return _adapter;
 }
 
@@ -31,9 +31,7 @@ static LBRESTAdapter * _adapter = nil;
 
 + (void) initializeProductsData
 {
-    LBModelPrototype *ObjectPrototype = [ [AppDelegate adapter]  prototypeWithName:@"products"];
-    
-    //try and read from the endpoint if it comes back with empty set the push some default data to it.
+    LBModelRepository *ObjectPrototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     // Define the load error functional block
     void (^loadErrorBlock)(NSError *) = ^(NSError *error) {
@@ -71,7 +69,7 @@ static LBRESTAdapter * _adapter = nil;
     void (^saveNewSuccessBlock)() = ^() {
     };
     
-    LBModelPrototype *prototype = [ [AppDelegate adapter]  prototypeWithName:@"cars"];
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"cars"];
     //Persist the newly created Model to the LoopBack node server
     [ [prototype modelWithDictionary:@{ @"name": @"Toyota FJ", @"milage" : @200 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
     [ [prototype modelWithDictionary:@{ @"name": @"VW Bug", @"milage" : @300 }]  saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
