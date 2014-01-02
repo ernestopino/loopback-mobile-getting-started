@@ -12,7 +12,7 @@
  
  This Tab shows you how to Create Read Update and Delete Model (CRUD) types and persist to the LoopBack server,
  
- You need to uncomment the code sections in the methods below to enable the Create Update & Delete Operations
+ The code sections in the methods below show Create Update & Delete Operations
  - ( void ) getModels
  - ( void ) createNewModel
  - ( void ) updateExistingModel
@@ -20,7 +20,7 @@
  
  You will need to have your Loopback Node server running
  
- You can start your Loopback Node server from the command line terminal with $slnode run app.js from within the loopback-nodejs-server/ folder
+ You can start your Loopback Node server from the command line terminal with $slc run app.js from within the loopback-nodejs-server/ folder
  
  You can find developer doc's for LoopBack here:
  http://docs.strongloop.com/loopback
@@ -67,12 +67,9 @@
     LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     // Invoke the allWithSuccess message for the 'products' LBModelPrototype
-    // Equivalent http JSON endpoint request : http://localhost:3000/products
+    // Equivalent http JSON endpoint request : http://localhost:3000/api/products
     
     [prototype allWithSuccess: loadSuccessBlock failure: loadErrorBlock];
-    return;
-    
-    [AppDelegate showGuideMessage: @"Step1 uncomment getModels"];
 };
 
 
@@ -104,9 +101,6 @@
     
     //Persist the newly created Model to the LoopBack node server
     [model saveWithSuccess:saveNewSuccessBlock failure:saveNewErrorBlock];
-    return;
-    
-    [AppDelegate showGuideMessage: @"Step1 uncomment createNewModel"];
 };
 
 - ( void ) updateExistingModel
@@ -146,10 +140,7 @@
     //Get the instance of the model with ID = 2
     // Equivalent http JSON endpoint request : http://localhost:3000/products/2
     [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
-    return;
     
-    
-    [AppDelegate showGuideMessage: @"Step1 uncomment updateExistingModel"];
 }//end updateExistingModelAndPushToServer
 
 - ( void ) deleteExistingModel
@@ -186,11 +177,9 @@
     LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     //Get the instance of the model with ID = 2
-    // Equivalent http JSON endpoint request : http://localhost:3000/products/2
+    // Equivalent http JSON endpoint request : http://localhost:3000/api/products/2
     [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
-    return;
     
-    [AppDelegate showGuideMessage: @"Step1 uncomment deleteExistingModel"];
 }//end deleteExistingModel
 
 - (IBAction)actionRefresh:(id)sender {
@@ -228,10 +217,10 @@
     if ( [[ [self.tableData objectAtIndex:indexPath.row] class] isSubclassOfClass:[LBModel class]])
     {
         LBModel *model = (LBModel *)[self.tableData objectAtIndex:indexPath.row];
-        //cell.textLabel.text = model[@"name"]; // [model objectForKeyedSubscript:@"name"];
+        
         cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@",
                                [model objectForKeyedSubscript:@"name"] ,
-                               (int)[model objectForKeyedSubscript:@"inventory"] ];
+                               [model objectForKeyedSubscript:@"inventory"] ];
     }
     return cell;
 }

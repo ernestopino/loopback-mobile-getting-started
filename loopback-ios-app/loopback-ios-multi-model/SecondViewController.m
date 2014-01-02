@@ -11,15 +11,15 @@
  
  This Tab shows you how to Create Update and Delete Model types with an inheritance paradigm instead of functional blocks with Value Pairs
  
- Uncomment the code sections below to enable
- - Referesh
- - Create
- - Update
- - Delete
+ The code sections in the methods below show Create Update & Delete Operations
+ - ( void ) getModels
+ - ( void ) createNewModel
+ - ( void ) updateExistingModel
+ - ( void ) deleteExistingModel
  
  You will need to have your Loopback Node server running
  
- You can start your Loopback Node server from the command line terminal with $slnode run app.js from within the loopback-nodejs-server/ folder
+ You can start your Loopback Node server from the command line terminal with `$slc run app.js` from within the loopback-nodejs-server/ folder
  */
 
 
@@ -28,46 +28,53 @@
 
 
 //Define a Local Objective C representation of the our LoopBack mobile model type
-@interface Car : LBModel
+@interface ProductObj : LBModel
+
 @property (nonatomic, copy) NSString *name;
-@property (nonatomic) NSNumber *milage;
+@property (nonatomic) NSNumber *inventory;
+@property (nonatomic) NSNumber *price;
 @end
 
-@implementation Car
+@implementation ProductObj
+
 @end
 
-@interface CarPrototype : LBModelRepository
-+ (instancetype)prototype;
+@interface ProductRepository : LBModelRepository
++ (instancetype)repository;
 @end
 
-@implementation CarPrototype
-+ (instancetype)prototype { return [self repositoryWithClassName:@"cars"]; }
+@implementation ProductRepository
++ (instancetype)repository {
+    ProductRepository *repository = [self repositoryWithClassName:@"products"];
+    repository.modelClass = [ProductObj class];
+    return repository;
+}
 @end
 
 
 @interface SecondViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
-@property (weak, nonatomic) CarPrototype *prototypeObjectReference;
+@property (weak, nonatomic) ProductRepository *prototypeObjectReference;
 @property (strong, nonatomic) NSArray *tableData;
 
-@property (strong, nonatomic) Car *myCarModelInstance;
+@property (strong, nonatomic) ProductObj *myProductModelInstance;
 @end
 
 @implementation SecondViewController
 
 
-- (CarPrototype *) prototypeObjectReference
+- (ProductRepository *) prototypeObjectReference
 {
     if (!_prototypeObjectReference)
-        _prototypeObjectReference = (CarPrototype *)[ [AppDelegate adapter]  repositoryWithClass:[CarPrototype class]];
+        _prototypeObjectReference = (ProductRepository *)[ [AppDelegate adapter]  repositoryWithClass:[ProductRepository class]];
     return _prototypeObjectReference;
 }
 
-- (Car *) myCarModelInstance
+- (ProductObj *) myProductModelInstance
 {
-    if (_myCarModelInstance)
-        _myCarModelInstance = [[Car alloc]init];
-    return _myCarModelInstance;
+    if (_myProductModelInstance)
+        _myProductModelInstance = [[ProductObj alloc]init];
+    return _myProductModelInstance;
 }
 
 - (NSArray *) tableData
@@ -79,18 +86,18 @@
 - ( void ) getModels
 {
     // ++++++++++++++++++++++++++++++++++++
-    // The block below gets all the 'car' models from the server
+    // The block below gets all the 'product' models from the server
     // ++++++++++++++++++++++++++++++++++++
     
     void (^loadFailBlock)(NSError *) = ^(NSError *error) {
         [AppDelegate showGuideMessage: @"No Server Found"];
     };//end selfFailblock
     
-    LBModelRepository *objectB = [ [AppDelegate adapter] repositoryWithModelName:@"car"];
+    LBModelRepository *objectB = [[AppDelegate adapter] repositoryWithClass:[ProductRepository class]];
     
     // Invoke the allWithSuccess message for the 'ammo' LBModelPrototype
-    // Equivalent http JSON endpoint request : http://localhost:3000/car
-    [ self.prototypeObjectReference allWithSuccess:^(NSArray *models) {
+    // Equivalent http JSON endpoint request : http://localhost:3000/api/products
+    [objectB allWithSuccess:^(NSArray *models) {
         NSLog( @"Success %d", [models count]);
         
         self.tableData = models;
@@ -106,7 +113,7 @@
 - ( void ) createNewModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    // The block below to creates a new 'car' model on the server
+    // The block below to creates a new 'product' model on the server
     // ++++++++++++++++++++++++++++++++++++
     
     NSLog( @"CreateNew Model and push to the server");
@@ -115,11 +122,12 @@
         [AppDelegate showGuideMessage: @"No Server Found"];
     };
     
-    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"car"];
+    //LBModelRepository *objectB = [[AppDelegate adapter] repositoryWithClass:[ProductRepository class]];
     
-    Car *modelInstance = (Car*)[self.prototypeObjectReference modelWithDictionary:@{}];
-    modelInstance.name = @"Telsa Model S";
-    modelInstance.milage = @9;
+    ProductObj *modelInstance = (ProductObj*)[self.prototypeObjectReference modelWithDictionary:@{}];
+    modelInstance.name = @"Product XX";
+    modelInstance.inventory = @9;
+    modelInstance.price = @9.23;
     NSLog( @"Created local Object %@", [modelInstance toDictionary]);
     
     [modelInstance saveWithSuccess:^{
@@ -139,7 +147,7 @@
 - ( void ) updateExistingModel
 {
     // ++++++++++++++++++++++++++++++++++++
-    //  The block below first finds the model with id = 2 and then updates the 'milage' parameter on the server
+    //  The block below first finds the model with id = 2 and then updates the 'inventory' parameter on the server
     // ++++++++++++++++++++++++++++++++++++
     
     // Define the find error functional block
@@ -151,7 +159,7 @@
     // Define your success functional block
     void (^findSuccessBlock)(LBModel *) = ^(LBModel *model) {
         //dynamically add an 'inventory' variable to this model type before saving it to the server
-        model[@"milage"] = @"7777";
+        model[@"inventory"] = @"7777";
         
         //Define the save error block
         void (^saveErrorBlock)(NSError *) = ^(NSError *error) {
@@ -166,11 +174,11 @@
         [model saveWithSuccess:saveSuccessBlock failure:saveErrorBlock];
     };
     
-    //Get a local representation of the 'cars' model type
-    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"cars"];
+    //Get a local representation of the 'products' model type
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     //Get the instance of the model with ID = 2
-    // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
+    // Equivalent http JSON endpoint request : http://localhost:3000/api/products/2
     [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
@@ -209,11 +217,11 @@
         [ model destroyWithSuccess:removeSuccessBlock failure:removeErrorBlock ];
     };
     
-    //Get a local representation of the 'car' model type
-    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"cars"];
+    //Get a local representation of the 'product' model type
+    LBModelRepository *prototype = [ [AppDelegate adapter]  repositoryWithModelName:@"products"];
     
     //Get the instance of the model with ID = 2
-    // Equivalent http JSON endpoint request : http://localhost:3000/cars/2
+    // Equivalent http JSON endpoint request : http://localhost:3000/api/products/2
     [prototype findById:@2 success:findSuccessBlock failure:findErrorBlock ];
     return;
     
@@ -244,7 +252,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -256,10 +263,8 @@
     if ( [[ [self.tableData objectAtIndex:indexPath.row] class] isSubclassOfClass:[LBModel class]])
     {
         LBModel *model = (LBModel *)[self.tableData objectAtIndex:indexPath.row];
-        //cell.textLabel.text = model[@"name"]; //[model objectForKeyedSubscript:@"name"];
-        //cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", modelInstance.name, [ modelInstance.milage stringValue] ];
         
-        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [model objectForKeyedSubscript:@"name"], (int)[model objectForKeyedSubscript:@"milage"] ];
+        cell.textLabel.text = [[NSString alloc] initWithFormat:@"%@ - %@", [model objectForKeyedSubscript:@"name"], [model objectForKeyedSubscript:@"inventory"] ];
         
     }
     return cell;

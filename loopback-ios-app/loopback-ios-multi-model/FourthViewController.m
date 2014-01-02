@@ -18,9 +18,7 @@
 
 
 /*
- 
  Custom node.js methods loopback-mobile-getting-started/loopback-nodejs-server/modules/product/index.js
- 
 */
 
 @implementation FourthViewController
@@ -92,9 +90,9 @@
 - (void)customMethod3 {
     
     // ++++++++++++++++++++++++++++++++++++
-    // The block below calls a custom API method that has been added to the 'cars' model
+    // The block below calls a custom API method that has been added to the 'products' model
     // it's the equivelent to the HTTP REST Call:
-    //  http://localhost:3000/cars/custommethod3?arg1=yack&arg2=123
+    //  http://localhost:3000/products/custommethod3?arg1=yack&arg2=123
     // ++++++++++++++++++++++++++++++++++++
     
     // Define the load error functional block
@@ -109,8 +107,8 @@
     };//end staticMethodSuccessBlock
     
     //Get a local representation of the 'cars' model type
-    LBModelRepository *objectB = [ [AppDelegate adapter]repositoryWithModelName:@"cars"];
-    [[ [AppDelegate adapter]  contract] addItem:[SLRESTContractItem itemWithPattern:@"/cars/custommethod3" verb:@"GET"] forMethod:@"cars.custommethod3"];
+    LBModelRepository *objectB = [ [AppDelegate adapter]repositoryWithModelName:@"products"];
+    [[ [AppDelegate adapter]  contract] addItem:[SLRESTContractItem itemWithPattern:@"/products/custommethod3" verb:@"GET"] forMethod:@"products.custommethod3"];
     
     // Invoke the invokeStaticMethod message for the 'cars' LBModelPrototype
     // Equivalent http JSON endpoint request : http://localhost:3000/cars/custommethod3?arg1=yack&arg2=123

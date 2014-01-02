@@ -6,6 +6,22 @@
 //  Copyright (c) 2013 StrongLoop. All rights reserved.
 //
 
+
+/*
+ Tab 3, Step 3
+ 
+ This Tab shows you how to use the built in filter and find features
+ 
+ The code sections in the methods below show Create Update & Delete Operations
+ - ( void ) findProductGreatestInventory
+ - ( void ) findProductLowestPrice
+ 
+ You will need to have your Loopback Node server running
+ 
+ You can start your Loopback Node server from the command line terminal with $slc run app.js from within the loopback-nodejs-server/ folder
+ */
+
+
 #import "ThirdViewController.h"
 #import "AppDelegate.h"
 
